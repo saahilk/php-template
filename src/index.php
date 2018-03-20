@@ -101,9 +101,9 @@
         $_SESSION['username'] = $username;
 //         header('Location:adminhome.php ');
 	    
-	      <script type="text/javascript">
+	      echo"<script type="text/javascript">
 window.location.href = 'adminhome.php';
-          </script>
+          </script>";
       }
       else {
         echo "<script>window.alert('Incorrect Username or Password')</script>";
