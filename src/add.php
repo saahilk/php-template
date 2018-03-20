@@ -90,7 +90,7 @@ input[type=submit]:hover {
 
 
 <body>
-	<a href="index.php"><img src="back.png" height="50px" width="50px"></a>
+	<a href="adminhome.php"><img src="back.png" height="50px" width="50px"></a>
 
 <center>
 <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
