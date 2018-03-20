@@ -59,7 +59,13 @@ input[type=text], select, textarea{
 
 $name=$_SESSION['username'];
 
-$conn = new mysqli("localhost", "root", "Hello@123", "deanproject");
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$servername = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+// Create connection
+$conn = new mysqli($servername, $username, $password, $db);
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
