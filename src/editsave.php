@@ -37,7 +37,7 @@ if ($conn->query($sql) === TRUE) {
 $sql1 = "UPDATE project SET status='$status' WHERE rollno='$roll' ";
 
 if ($conn->query($sql1) === TRUE) {
- echo "<script>alert('Details edited successfully');window.location.href='index.php';</script>";
+ echo "<script>alert('Details edited successfully');window.location.href='adminhome.php';</script>";
 } else {
     echo "Error " . $conn->error;
 }
