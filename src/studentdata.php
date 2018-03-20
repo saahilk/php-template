@@ -44,7 +44,7 @@ if (mysqli_query($conn, $sql) === TRUE) {
 }
 
 if (mysqli_query($conn, $sql2) === TRUE) {
-   echo "<script>alert('Details Added');window.location.href='add.php';</script>";
+   echo "<script>alert('Details Added');window.location.href='adminhome.php';</script>";
 } else {
          echo "Error: " . $sql2 . "<br>" . mysqli_error($conn);
 }
