@@ -57,18 +57,11 @@ input[type=text], select, textarea{
 <center><button onclick="window.location.href='add.php'">Add New Project</button></center>
 <br><br>
 
-<form action="search.php" method="POST">
-<input type="text" name="search" placeholder="Search by RollNo">
-<input type="submit" value="search">
-</form>
-
-
 <?php
 
 
-$_SESSION['username'] ="admin@gmail.com";
 $roll="";
-    
+
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
 $username = $url["user"];
@@ -81,12 +74,13 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-
+$search=mysqli_real_escape_string($conn, $_POST['search']);
 
 
 $sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,status,date
 FROM project,mtechstudent 
-where project.rollno=mtechstudent.rollno";
+where project.rollno=mtechstudent.rollno and project.rollno='$search'";
+
 $result= mysqli_query($conn, $sql);
 $availability=0;
 
@@ -154,6 +148,3 @@ mysqli_close($conn);
 </html>
 
 
-
-</body>
-</html>
