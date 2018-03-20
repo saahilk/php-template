@@ -7,8 +7,6 @@
 	    header('Location:guide.php');
 	}
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
