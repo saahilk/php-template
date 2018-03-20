@@ -107,7 +107,7 @@ window.location.href = 'adminhome.php';
 		  <?php
       }
       else {
-        <script>window.alert('Incorrect Username or Password')</script>";
+        echo "<script>window.alert('Incorrect Username or Password')</script>";
         die();
       }
     }
