@@ -100,13 +100,14 @@
       if($username == 'admin' && $pass == 'admin') {
         $_SESSION['username'] = $username;
 //         header('Location:adminhome.php ');
-	    
-	      echo"<script type="text/javascript">
+	    ?>
+	      <script type="text/javascript">
 window.location.href = 'adminhome.php';
-          </script>";
+          </script>
+		  <?php
       }
       else {
-        echo "<script>window.alert('Incorrect Username or Password')</script>";
+        <script>window.alert('Incorrect Username or Password')</script>";
         die();
       }
     }
