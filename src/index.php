@@ -58,7 +58,7 @@
     }
   </style>
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
-	<meta name="google-signin-client_id" content="893838997651-m8j18himp436r9tscqu1q3vhlbjj8db4.apps.googleusercontent.com">
+	<meta name="google-signin-client_id" content="893838997651-bqi7foj2m5hjb2to50906tjfnio1furm.apps.googleusercontent.com">
 	<meta name="google-signin-hosted_domain" content="nitc.ac.in" />
 </head>
 <body>
