@@ -66,7 +66,7 @@ input[type=text], select, textarea{
 <?php
 
 
-$_SESSION['username'] ="admin@gmail.com";
+
 $roll="";
     
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
