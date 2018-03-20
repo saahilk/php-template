@@ -1,4 +1,4 @@
 <?php
-session_destroy();
-Header("location:index.php");
+<script type="text/javascript">
+window.location.href = 'index.php';
 ?>
