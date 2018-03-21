@@ -2,7 +2,7 @@
 <title>NITC</title>
 <html>
 	<head>
-		<meta name="google-signin-client_id" content="952937888060-v25qao6jrtprhhpm9kosm23egc1aojhh.apps.googleusercontent.com">
+		<meta name="google-signin-client_id" content="952937888060-b470t00um3s9uclet4qaua91ocvrjfus.apps.googleusercontent.com">
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 		<script>
