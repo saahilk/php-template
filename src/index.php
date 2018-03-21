@@ -1,129 +1,153 @@
 <?php
-	session_start();
-
-	if(isset($_GET['email'])) {
-       $email=$_GET['email'];
-		$_SESSION['username'] = $email;
-	    header('Location:guide.php');
-	}
+session_start();
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Welcome</title>
-	<style>
-    * {
-	     padding: 0px;
-	     margin: 0px;
-      }
-    html {
-	     height: 100%;
-    }
-    body {
-	    display: flex;
-	    flex-flow: column nowrap;
-	    height: 100%;
-	   background-color: #f2f2f2;
-    }
-    div#header {
-	    background-color: #e9dbd8;
-	    max-width: 100%;
-	    font-family: verdana;
-	    color: #348e9e;
-    }
-    div#login {
-	    float: right;
-	    padding: 30px;
-    }
-    input[type=password].login, input[type=text].login {
-    width: 150px; /* Full width */
-    padding: 12px; /* Some padding */ 
-    border: 1px solid #ccc; /* Gray border */
-    border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 16px; /* Bottom margin */
-    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
-    }
-		
-    input[type=submit].login {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    }
-		
-    input[type=submit]:hover {
-    	background-color: #348e9e; /*#45a049*/
-    }
-  </style>
-	<script src="https://apis.google.com/js/platform.js" async defer></script>
-<!--  		<meta name="google-signin-client_id" content="893838997651-bqi7foj2m5hjb2to50906tjfnio1furm.apps.googleusercontent.com"> -->
-<meta name="google-signin-client_id" content="893838997651-1hp3r2mhib9sbhhsmsn911bev9voif0g.apps.googleusercontent.com">
-	<meta name="google-signin-hosted_domain" content="nitc.ac.in" />
-</head>
-<body>
-  <div id="header">
-    <div id="login">
-      <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>">
-        <input type="text" placeholder="Administrator" class="login" name="username" required="" >
-        <input type="password" placeholder="Password" class="login" name="password" required="" >
-        <input type="submit" value="Login" class="login">
-        <input type="text" style="display: none;" name="source" value="topbar_login" >
-      </form>
-    </div>
-  </div>
-<br><br>	
-<center>
-<h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
-<h2>phD Student Project Management System</h2></center>
 
+
+<title>NITC</title>
+
+
+<html>
+	<head>
+
+		<meta name="google-signin-client_id" content="952937888060-v25qao6jrtprhhpm9kosm23egc1aojhh.apps.googleusercontent.com">
+		<meta name="google-signin-hosted_domain" content="nitc.ac.in" />
+<?php
+
+if(isset($_SESSION["user_id"]) && $_SESSION["user_id"]!= ""){
+	$_SESSION["user_id"]= "";
+}
+?>
+		<style>
+
+			.navBar {
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: #39B7CD;
+				display: block;
+				align-content: flex-start;
+			}
+
+			.navItemList li a {
+			    	display: block;
+			    	color: white;
+			    	text-align: center;
+			    	padding: 0 16px;
+			    	text-decoration: none;
+			}
+
+			.navtitle{
+			 	font-family: arial, sans-serif;
+			  	color: white;
+			  	text-align: center;
+			  	padding: 0px 200px 14px 6px;
+			  	margin-right: 200px;
+			  	font-size: 20px;
+			  	text-decoration: none;
+			}
+
+			.subButton{
+			  	position: relative;
+			  	margin-top:10px;
+			  	background-color: #39B7CD;;
+			  	border: none;
+			  	color: #fff;
+			  	border-radius: 15px;
+			  	width: 100px;
+			  	height: 40px;
+			  	cursor: pointer;
+			}
+
+			.blog{
+			  	border-style: solid;
+			 	border-width:1px;
+			  	border-color: #DCDCDC;
+			  	border-radius: 15px;
+			  	margin-top:10px;
+			  	padding:5px;
+			}
+
+			.blogdel{
+			  	margin-bottom:7px;
+			}
 	
-	
-	<div id="reg">
-		<center>
-			<br><br><br><br>
-			<h4 style="font-family: verdana;margin-bottom:10px;font-weight:100">Guides login with your NITC email ID</h4>
-		<div class="g-signin2" data-onsuccess="onSignIn"></div>
-		<center>
-	</div>
+			.navItemList{
+			  	list-style-type: none;
+			}
+
+			.navItemList li {
+			    	float: left;
+			}
+			
+			.navItemList li a:hover {
+			}
+
+			.navtitle a:hover{
+			}
+			
+			#feeds{
+			  	align-content:center;
+			}
+
+			#feeds{
+			  	border-style: solid;
+			  	border-width: 0px;
+			  	padding:10px;
+			  	border-color: #333;
+			  	border-radius: 15px;
+			  	margin: 25px 50px;
+			}
+
+		</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 	<script>
-		function onSignIn(googleUser) {
-			var profile = googleUser.getBasicProfile();
-			var id = profile.getId();
-			var name = profile.getName();
-			var email = profile.getEmail();
-			console.log('ID: ' + id); // Do not send to your backend! Use an ID token instead.
-			console.log('Name: ' + name);
-			console.log('Image URL: ' + profile.getImageUrl());
-			console.log('Email: ' + email); // This is null if the 'email' scope is not present.
-			window.location.href="index.php?name="+name+"&email="+email;
-		}
-	</script>
 
-<?php
-  if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if ($_POST['source'] == 'topbar_login') {
-      $username= $_POST['username'];
-      $pass = $_POST['password'];
-      if($username == 'admin' && $pass == 'admin') {
-        $_SESSION['username'] = $username;
-//         header('Location:adminhome.php ');
-	    ?>
-	      <script type="text/javascript">
-window.location.href = 'adminhome.php';
-          </script>
-		  <?php
-      }
-      else {
-        echo "<script>window.alert('Incorrect Username or Password')</script>";
-        die();
-      }
-    }
-  }
-?>
-</body>
+		var i =0;
+		
+		function onSignIn(googleUser) {
+		  	var profile = googleUser.getBasicProfile();
+		  
+			document.getElementById("emailval").value=profile.getEmail();
+		  	document.getElementById("nameval").value=profile.getName();
+		  	document.getElementById("signinform").submit();
+		 
+			i=1;
+		}
+
+		function signOut() {
+			var auth2 = gapi.auth2.getAuthInstance();
+			
+			auth2.signOut().then(function () {
+				console.log('User signed out.');
+			});
+		}
+
+		function signIN(){
+			if(i==1)
+				document.getElementById("signinform").submit();
+		}
+
+	</script>
+	</head>
+
+	<body style="padding:0;margin:0;font-family: arial, sans-serif;">
+		<div class="navBar">
+	  		<ul class="navItemList">
+	     	 		<li><div class="navtitle"><a href="#"><b>Doc Tracker</b></a></div></li>
+	    		</ul>
+	  	</div>
+		<center>
+			<h1>Sign In</h1>
+			<form action="home.php" id="signinform" method="post" style="display:none">
+				<input name="user_email" id="emailval" style="display:none" required/>
+				<input name="user_name" id="nameval" style="display:none" required/>
+			</form>
+			<div class="g-signin2" data-onsuccess="onSignIn" onclick="signIN();"></div>
+		</center>
+	</body>
+
 </html>
