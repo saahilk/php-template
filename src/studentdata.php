@@ -17,6 +17,7 @@ $db = substr($url["path"], 1);
 // Create connection
 $conn = new mysqli($servername, $username, $password, $db);
 
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
@@ -37,10 +38,19 @@ if ($conn->connect_error) {
    $sql2 = " INSERT INTO project(rollno,topic,status,date) VALUES 
 ('$rollno','$topic','$status','$date')";
 
+   $sql3 = " INSERT INTO history(rollno,status,datemodify) VALUES 
+('$rollno','$status','$date')";
+
 if (mysqli_query($conn, $sql) === TRUE) {
    echo "";
 } else {
          echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+if (mysqli_query($conn, $sql3) === TRUE) {
+   echo "";
+} else {
+         echo "Error: " . $sql3 . "<br>" . mysqli_error($conn);
 }
 
 if (mysqli_query($conn, $sql2) === TRUE) {

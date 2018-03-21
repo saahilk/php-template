@@ -58,8 +58,6 @@ input[type=text], select, textarea{
 
 <?php
 
-$name=$_SESSION['username'];
-
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
 $username = $url["user"];
@@ -68,11 +66,12 @@ $db = substr($url["path"], 1);
 // Create connection
 $conn = new mysqli($servername, $username, $password, $db);
 
+
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
-
+$roll="";
+$name=$_SESSION['username'];
 
 $sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,status,date
 FROM project,mtechstudent 
@@ -82,7 +81,7 @@ $availability=0;
 
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
-              
+            $roll=$row['rollno'];
              $availability=1;
              
 
@@ -94,6 +93,13 @@ if (mysqli_num_rows($result) > 0) {
 
 ?>
 <br>
+
+<center>
+ <form action="history.php" method="post" >
+  <input type="hidden" name="rollno" value=<?php echo $roll ?> >
+  <input type="submit" value="History">
+</form>
+</center>
 </div>
 
 <?php

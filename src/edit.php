@@ -105,6 +105,7 @@ $db = substr($url["path"], 1);
 // Create connection
 $conn = new mysqli($servername, $username, $password, $db);
 
+
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
@@ -138,16 +139,25 @@ mysqli_close($conn);
 ?> 
 </div>
 <br><br>
-<form action="editsave.php" method="POST">
+
+<form action="editsave.php" method="POST" onsubmit="return confirm('Do you really want to submit the form?');">
 <label >New status of the project</label>
 <select  name="status">
 <option value="">Select the option</option>    
-<option value="Dean's approval">Dean's approval</option>
-<option value="Forwarded to reviewer">Forwarded to reviewer</option>
-<option value="Pending Reviewer's Response">Pending Reviewer's Response</option>
+<option value="option1">option1</option>
+<option value="option2">option2</option>
+<option value="option3">option3</option>
+<option value="option4">option4</option>
+<option value="option5">option5</option>
+<option value="option6">option6</option>
+<option value="option7">option7</option>
+<option value="option8">option8</option>
+<option value="option9">option9</option>
+<option value="option10">option10</option>
+
 <br>
 <label >Modified Date</label>
-<input type="date"  name="date" placeholder="Date">
+<input type="date"  name="date" placeholder="Date" required="true">
 
 <input type="hidden" name="rollno" value=<?php echo $roll ?> >
 <input type="submit" value="Save">

@@ -49,27 +49,16 @@ input[type=text], select, textarea{
 
 
 <body>
-    <a href="logout.php"><img src="123.png" height="50px" width="50px"></a>
+    <a href="adminhome.php"><img src="back.png" height="50px" width="50px"></a>
 <center>
 <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
-<h2>phD Student Project Management System</h2></center>
+<h2>phD Student Project Management System</h2>
 <br><br>
-
-<center><button onclick="window.location.href='add.php'">Add New Project</button></center>
-<br><br>
-
-<form action="search.php" method="POST">
-<input type="text" name="search" placeholder="Search by RollNo or Name">
-<input type="submit" value="search">
-</form>
-
-
+<h3>History</h3></center>
 <?php
 
 
 
-$roll="";
-    
 
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
@@ -79,64 +68,39 @@ $db = substr($url["path"], 1);
 // Create connection
 $conn = new mysqli($servername, $username, $password, $db);
 
+
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+$roll=mysqli_real_escape_string($conn, $_POST['rollno']);
 
 
+$sql = "SELECT rollno,status,datemodify
+FROM history
+where rollno='$roll'";
 
-$sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,status,date
-FROM project,mtechstudent 
-where project.rollno=mtechstudent.rollno";
 $result= mysqli_query($conn, $sql);
 $availability=0;
 
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
-              
-             $availability=1;
-              $roll=$row['rollno'];
-
-  ?>
+    
+  
+ ?>
           <div style="width: 30%;float:left;padding: 15px;background-color: #e9dbd8;margin: 5px" >
            
             <?php
-  echo  "<h4>Name:  " . $row["name"]."<br> ". " Roll No :  " . $row["rollno"]. " <br> ". " Project : " . $row["topic"]. "<br> "." Guided By: " . $row["guide"]."<br>  ".  "Present Status : " . $row["status"]."<br>  ". "Modified Date : " . $row["date"]."<br>" ; 
+  echo  "<h4>Status:  " . $row["status"]."<br> ". " Date :  " . $row["datemodify"]. " <br> "; 
 
 ?>
 <br>
-<center>
- <form action="edit.php" method="post" >
-  <input type="hidden" name="rollno" value=<?php echo $roll ?> >
-  <input type="submit" value="Edit">
-</form>
-<br>
- <form action="history.php" method="post" >
-  <input type="hidden" name="rollno" value=<?php echo $roll ?> >
-  <input type="submit" value="History">
-</form>
 
-
-</center>
 </div>
 
 <?php
 }
 }
-
-
-
-if($availability==0)
-{
-
-  ?>
- <center>
-  <?php
-  echo "<br><br><br>";
-   echo "No projects are available";
-}
-
                   
 mysqli_close($conn);
 ?> 
@@ -162,6 +126,3 @@ mysqli_close($conn);
 </html>
 
 
-
-</body>
-</html>

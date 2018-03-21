@@ -102,11 +102,11 @@ input[type=submit]:hover {
 
 
    <label >Full Name</label>
-    <input type="text"  name="name" placeholder="Name">
+    <input type="text"  name="name" placeholder="Name" required="true">
         <label >Roll No</label>
-    <input type="text"  name="rollno" placeholder="Roll No">
+    <input type="text"  name="rollno" placeholder="Roll No" required="true">
         <label >Email Id</label>
-    <input type="text"  name="emailid" placeholder="EmailId">
+    <input type="text"  name="emailid" placeholder="EmailId" required="true">
 
 <label for="department">Department</label>
 <select  name="department">
@@ -125,26 +125,35 @@ input[type=submit]:hover {
 </select>
 
 <label >Guidance</label>
-<input type="text"  name="guidance" placeholder="Guidance">
+<input type="text"  name="guidance" placeholder="Guidance" required="true">
 <label >Guidance Email-Id</label>
-<input type="text"  name="guide_emailid" placeholder="Email -Id">
+<input type="text"  name="guide_emailid" placeholder="Email -Id" required="true">
 
 
   <h3 style="color:green">Project Details</h3></center>
   <br>
   <label >Project Topic </label>
-<input type="text"  name="topic" placeholder="project Name">
+<input type="text"  name="topic" placeholder="project Name" required="true">
 <label >Status of the project</label>
 
 <select  name="status">
-<option value=""></option>    
-<option value="Dean's approval">Dean's approval</option>
-<option value="Forwarded to reviewer">Forwarded to reviewer</option>
-<option value="Pending Reviewer's Response">Pending Reviewer's Response</option>
+<option value="">select the option</option>    
+<option value="option1">option1</option>
+<option value="option2">option2</option>
+<option value="option3">option3</option>
+<option value="option4">option4</option>
+<option value="option5">option5</option>
+<option value="option6">option6</option>
+<option value="option7">option7</option>
+<option value="option8">option8</option>
+<option value="option9">option9</option>
+<option value="option10">option10</option>
+
+
 </select>
 <br>
 <label >Date</label>
-<input type="date"  name="date" placeholder="Date">
+<input type="date"  name="date" placeholder="Date" required="true">
 
 <input type="submit" value="Submit">
 </form>
