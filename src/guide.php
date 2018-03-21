@@ -95,7 +95,7 @@ if (mysqli_num_rows($result) > 0) {
 <br>
 
 <center>
- <form action="history.php" method="post" >
+ <form action="historyuser.php" method="post" >
   <input type="hidden" name="rollno" value=<?php echo $roll ?> >
   <input type="submit" value="History">
 </form>
