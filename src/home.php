@@ -142,5 +142,84 @@ else {
 				</li>
 		    	</ul>
 		</div>
+		<div>
+			<center>
+		<?php
+				if($_SESSION['user_id']=='0'){
+					echo 'User';
+				}
+				elseif($_SESSION['user_id']=='1'){
+					$qry="SELECT * FROM document";
+					$result=mysqli_query($conn,$sql);
+			        if($result) {
+				        echo "<table>
+				          <tr>
+				            <th>Tracking ID</th>
+				            <th>Status</th>				  
+				          </tr>";
+				        if(mysqli_num_rows($result)>0) {
+				          while($row = mysqli_fetch_assoc($result)) {
+				          	 echo '<tr>
+			                	<td>'.$row['ID'].'</td><td>';
+			                	
+
+								if($row['location']=='1'){
+									echo 'Dean';
+								}
+
+								elseif ($row['location']=='2') {
+									echo 'DR';
+								}
+
+								else{
+									$temp=$row['location']-2;
+									echo 'GA';
+									echo $temp;
+								}
+			                	echo "</td></tr>";
+
+				          }
+						
+						}
+					}
+				}
+				else{
+					$qry="SELECT * FROM document WHERE location="._SESSION['user_id'];
+					$result=mysqli_query($conn,$sql);
+			        if($result) {
+				        echo "<table>
+				          <tr>
+				            <th>Tracking ID</th>
+				            <th>Status</th>				  
+				          </tr>";
+				        if(mysqli_num_rows($result)>0) {
+				          while($row = mysqli_fetch_assoc($result)) {
+				          	 echo '<tr>
+			                	<td>'.$row['ID'].'</td><td>';
+			                	
+								if($_SESSION['user_id']=='1'){
+									echo 'Dean';
+								}
+
+								elseif ($_SESSION['user_id']=='2') {
+									echo 'DR';
+								}
+
+								else{
+									$temp=$_SESSION['user_id']-2;
+									echo 'GA';
+									echo $temp;
+								}
+			                	echo "</td></tr>";
+				          }
+						
+						}
+					}
+				}
+
+			?>
+			</center>
+		</div>
+		</body>
 	</body>
 </html>
