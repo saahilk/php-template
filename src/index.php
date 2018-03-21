@@ -23,7 +23,7 @@
 	    display: flex;
 	    flex-flow: column nowrap;
 	    height: 100%;
-	    background-color: #e9dbd8;
+	   background-color: #f2f2f2;
     }
     div#header {
 	    background-color: #e9dbd8;
