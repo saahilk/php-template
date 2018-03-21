@@ -23,6 +23,7 @@
 	    display: flex;
 	    flex-flow: column nowrap;
 	    height: 100%;
+	    background-color: #e9dbd8;
     }
     div#header {
 	    background-color: #e9dbd8;
@@ -77,11 +78,12 @@
 	<center>
 <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
 <h2>phD Student Project Management System</h2></center>
-<br><br><br>
+
 	
 	
 	<div id="reg">
 		<center>
+			<br><br><br><br>
 			<h4 style="font-family: verdana;margin-bottom:10px;font-weight:100">Guides login with your NITC email ID</h4>
 		<div class="g-signin2" data-onsuccess="onSignIn"></div>
 		<center>
