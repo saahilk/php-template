@@ -25,7 +25,7 @@
 	    height: 100%;
     }
     div#header {
-	    background-color: #2f4f4f;
+	    background-color: #e9dbd8;
 	    max-width: 100%;
 	    font-family: verdana;
 	    color: #348e9e;
@@ -35,22 +35,25 @@
 	    padding: 30px;
     }
     input[type=password].login, input[type=text].login {
-    	padding: 5px;
-    	border-radius: 2px;
-    	margin: 3px;
-    	border: none;
-    	height: 15px;
-    	width: 150px;
-    	font-size: 13px;
+    width: 150px; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
     }
+		
     input[type=submit].login {
-    	width: 60px;
-    	font-weight: bold;
-    	font-size: 13px;
-    	padding: 2px;
-    	max-height: 25px;
-    	border-radius: 2px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
     }
+		
     input[type=submit]:hover {
     	background-color: #348e9e; /*#45a049*/
     }
@@ -71,6 +74,12 @@
       </form>
     </div>
   </div>
+	<center>
+<h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
+<h2>phD Student Project Management System</h2></center>
+<br><br><br>
+	
+	
 	<div id="reg">
 		<center>
 			<h4 style="font-family: verdana;margin-bottom:10px;font-weight:100">Guides login with your NITC email ID</h4>
