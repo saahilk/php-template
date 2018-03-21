@@ -75,7 +75,8 @@
       </form>
     </div>
   </div>
-	<center>
+<br><br>	
+<center>
 <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
 <h2>phD Student Project Management System</h2></center>
 
