@@ -234,7 +234,7 @@ for($j=0;$j<=7;$j++){
 	}
 }
 
-echo '</select></td><td><form action="forward.php" id="fwd'.$i.'">
+echo '</select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" >
 	<input type="hidden" name="ID" value="'.$ID.'">
 	<input align="center" type="submit">
 </form></td>
