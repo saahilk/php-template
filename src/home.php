@@ -95,7 +95,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$qry="SELECT * FROM user WHERE emailid='" . $email_val."'";
   
 	$result = mysqli_query($conn,$qry);
-  	$row  = mysqli_fetch_assoc($result);
+  	$row  = mysqli_fetch_array($result);
 
   	if(is_array($row)) {
     		$_SESSION['user_id'] = $row['flag'];
@@ -123,6 +123,17 @@ if($_SESSION['user_id']=="") {
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<a href="index.php"><b>
 <?php 
+
+$qry="SELECT * FROM user ";
+$run_blog=mysqli_query($conn,$qry);
+  while($row_blog=mysqli_fetch_array($run_blog))
+  {
+    $emailID=$row_blog['emailid'];
+$flag=$row_blog['flag'];
+echo $emailID;
+echo $flag."</br>";
+
+}
 echo $_SESSION['user_id'];
 if($_SESSION['user_id']=='1'){
 	echo 'Dean';
