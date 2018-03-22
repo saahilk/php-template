@@ -7,6 +7,12 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);
 // Create connection
+
+date_default_timezone_set('Asia/Kolkata');
+
+
+$timestamp=date('Y-m-d H:i:s');
+
 $conn = new mysqli($servername, $username, $password, $db);
 
 if ($conn->connect_error) {
@@ -29,7 +35,7 @@ $people=[
 
 $flag=$_POST['flist'];
 $track_no=$_POST['ID'];
-$qry='UPDATE document SET location="'.$flag.'" WHERE ID="'.$track_no.'"';
+$qry='UPDATE document SET location="'.$flag.'" timestamp="'.$timestamp.'" WHERE ID="'.$track_no.'"';
 if($conn->query($qry)==TRUE)
 {
     header('Location:home.php');
