@@ -124,17 +124,6 @@ if($_SESSION['user_id']=="") {
 					<a href="index.php"><b>
 <?php 
 
-$qry="SELECT * FROM user ";
-$run_blog=mysqli_query($conn,$qry);
-  while($row_blog=mysqli_fetch_array($run_blog))
-  {
-    $emailID=$row_blog['emailid'];
-$flag=$row_blog['flag'];
-echo $emailID;
-echo $flag."</br>";
-
-}
-echo $_SESSION['user_id'];
 if($_SESSION['user_id']=='1'){
 	echo 'Dean';
 }
