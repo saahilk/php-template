@@ -35,7 +35,7 @@ $people=[
 
 $flag=$_POST['flist'];
 $track_no=$_POST['ID'];
-$qry='UPDATE document SET location="'.$flag.'" timestamp="'.$timestamp.'" WHERE ID="'.$track_no.'"';
+$qry='UPDATE document SET location="'.$flag.'",timestamp="'.$timestamp.'" WHERE ID="'.$track_no.'"';
 if($conn->query($qry)==TRUE)
 {
     header('Location:home.php');
