@@ -76,7 +76,7 @@
 		</style>
 	</head>
 <?php
-// session_start();
+session_start();
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
 $username = $url["user"];
@@ -149,72 +149,10 @@ if($_SESSION['user_id']=="") {
 					echo 'User';
 				}
 				elseif($_SESSION['user_id']=='1'){
-					$qry="SELECT * FROM document";
-					$result=mysqli_query($conn,$qry);
-			        if($result) {
-				        echo "<table>
-				          <tr>
-				            <th>Tracking ID</th>
-				            <th>Status</th>				  
-				          </tr>";
-				        if(mysqli_num_rows($result)>0) {
-				          while($row = mysqli_fetch_assoc($result)) {
-				          	 echo '<tr>
-			                	<td>'.$row['ID'].'</td><td>';
-			                	
-
-								if($row['location']=='1'){
-									echo 'Dean';
-								}
-
-								elseif ($row['location']=='2') {
-									echo 'DR';
-								}
-
-								else{
-									$temp=$row['location']-2;
-									echo 'GA';
-									echo $temp;
-								}
-			                	echo "</td></tr>";
-							}
-						}
-						echo "</table>";
-					}
+					echo 'Dean';
 				}
 				else{
-					$qry="SELECT * FROM document WHERE location='".$_SESSION['user_id']."'";
-					$result=mysqli_query($conn,$qry);
-			        if($result) {
-				        echo "<table>
-				          <tr>
-				            <th>Tracking ID</th>
-				            <th>Status</th>				  
-				          </tr>";
-				        if(mysqli_num_rows($result)>0) {
-				          while($row = mysqli_fetch_assoc($result)) {
-				          	 echo '<tr>
-			                	<td>'.$row['ID'].'</td><td>';
-			                	
-								if($_SESSION['user_id']=='1'){
-									echo 'Dean';
-								}
-
-								elseif ($_SESSION['user_id']=='2') {
-									echo 'DR';
-								}
-
-								else{
-									$temp=$_SESSION['user_id']-2;
-									echo 'GA';
-									echo $temp;
-								}
-			                	echo "</td></tr>";
-				           }
-						
-						}
-						echo "</table>";
-					}
+					echo 'DR/GAs';
 				}
 
 			?>
