@@ -216,7 +216,7 @@ echo $people[$_SESSION['user_id']]
     $location=$row_blog['location'];
     $var=$people[$location];
     
-     echo "<tr align='center'>
+     echo '<tr align="center">
   <td>$i.</td>
   
   
@@ -226,7 +226,7 @@ echo $people[$_SESSION['user_id']]
   
 <td> $timestamp</td>
 <td> 
-<select name='flist' form='fwd'".$i.">";
+<select name="flist" form="fwd'.$i.'">';
 for($j=0;$j<=7;$j++){
 	if($j!=$location and $j!=_SESSION['user_id'])
 	{
@@ -234,7 +234,7 @@ for($j=0;$j<=7;$j++){
 	}
 }
 
-echo '</select></td><td><form action="forward.php" id="fwd"'.$i.'>
+echo '</select></td><td><form action="forward.php" id="fwd'.$i.'">
 	<input type="hidden" name="ID" value="'.$ID.'">
 	<input align="center" type="submit">
 </form></td>
