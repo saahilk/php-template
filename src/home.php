@@ -1,3 +1,37 @@
+<?php
+
+
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$servername = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+// Create connection
+$conn = new mysqli($servername, $username, $password, $db);
+
+if ($conn->connect_error) {
+	die("Connection failed: " . $conn->connect_error);
+}
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+  	$email_val = $_POST['user_email'];
+  	
+	$qry="SELECT * FROM user WHERE emailid='" . $email_val."'";
+  
+	$result = mysqli_query($conn,$qry);
+  	$row  = mysqli_fetch_array($result);
+
+  	if(is_array($row)) {
+    	$_SESSION['user_id'] = $row['flag'];
+   	 	$_SESSION['username']=$_POST['user_name'];
+  	}
+}
+if($_SESSION['user_id']=="") {
+  	header('Location:index.php');
+}
+
+
+?>
 <!DOCTYPE html>
 <title>NITC</title>
 <html>
@@ -75,40 +109,7 @@
 			}
 		</style>
 	</head>
-<?php
 
-
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$servername = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$db = substr($url["path"], 1);
-// Create connection
-$conn = new mysqli($servername, $username, $password, $db);
-
-if ($conn->connect_error) {
-	die("Connection failed: " . $conn->connect_error);
-}
-
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-  	$email_val = $_POST['user_email'];
-  	
-	$qry="SELECT * FROM user WHERE emailid='" . $email_val."'";
-  
-	$result = mysqli_query($conn,$qry);
-  	$row  = mysqli_fetch_array($result);
-
-  	if(is_array($row)) {
-    	$_SESSION['user_id'] = $row['flag'];
-   	 	$_SESSION['username']=$_POST['user_name'];
-  	}
-}
-if($_SESSION['user_id']=="") {
-  	header('Location:index.php');
-}
-
-
-?>
 
 	<body style="padding:0;margin:0;font-family: arial, sans-serif;">
 		  <div class="navBar">
