@@ -184,7 +184,7 @@ else {
 					}
 				}
 				else{
-					$qry="SELECT * FROM document WHERE location=".$_SESSION['user_id'];
+					$qry="SELECT * FROM document WHERE location='".$_SESSION['user_id']."'";
 					$result=mysqli_query($conn,$qry);
 			        if($result) {
 				        echo "<table>
