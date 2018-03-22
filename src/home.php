@@ -77,6 +77,10 @@
 	</head>
 <?php
 
+if($_SESSION['user_id']=="") {
+  	header('Location:index.php');
+}
+
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
 $username = $url["user"];
@@ -103,9 +107,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   	}
 }
 
-if($_SESSION['user_id']=="") {
-  	header('Location:index.php');
-}
+
 ?>
 
 	<body style="padding:0;margin:0;font-family: arial, sans-serif;">
