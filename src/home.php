@@ -115,7 +115,7 @@ if($_SESSION['user_id']=="") {
 		  <div class="navBar">
 		  	<ul class="navItemList">
 		      		<li>
-					<div class="navtitle"><a href="index.php">
+					<div class="navtitle"><a href="home.php">
 						<b>Doc Tracker</b></a>
 					</div>	
 				</li>
@@ -124,7 +124,7 @@ if($_SESSION['user_id']=="") {
 				</li>
 		    
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="index.php"><b>
+					<b>
 <?php 
 
 if($_SESSION['user_id']=='1'){
@@ -147,7 +147,7 @@ else {
 ?>
 
 		      	
-		   		     	</b></a>
+		   		     	</b>
 				</li>
 		    	</ul>
 		</div>

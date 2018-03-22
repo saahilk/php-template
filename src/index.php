@@ -15,7 +15,7 @@ session_start();
 
 if(isset($_SESSION["user_id"]) && $_SESSION["user_id"]!= ""){
 	$_SESSION["user_id"]= "";
-	echo 'user_id:'.$_SESSION['user_id'];
+	echo '<h1>user_id:'.$_SESSION['user_id'].'</h1>';
 }
 ?>
 		<style>
