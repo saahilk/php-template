@@ -76,7 +76,7 @@
 		</style>
 	</head>
 <?php
-
+session_start();
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
 $username = $url["user"];
@@ -180,14 +180,8 @@ else {
 
 				}
 				elseif($_SESSION['user_id']=='1'){
+
 					
-					$servername = "localhost";
-					$username = "root";
-					$password = "";
-					$db="track";
-					// Create connection
-					$conn = new mysqli($servername, $username, $password, $db);
-					$user_id=$_SESSION['user_id'];
 					?>
 					<div>
 					</br>
@@ -282,12 +276,7 @@ $i=$i+1;
 					<?php
 				}
 				else{
-					$servername = "localhost";
-					$username = "root";
-					$password = "";
-					$db="track";
-					// Create connection
-					$conn = new mysqli($servername, $username, $password, $db);
+					
 					$user_id=$_SESSION['user_id'];
 					?>
 					<div>
