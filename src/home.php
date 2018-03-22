@@ -176,11 +176,10 @@ if($_SESSION['user_id']=="") {
 									echo 'GA';
 									echo $temp;
 								}
-			                	echo "</td></tr></table>";
-
-				          }
-						
+			                	echo "</td></tr>";
+							}
 						}
+						echo "</table>";
 					}
 				}
 				else{
@@ -210,10 +209,11 @@ if($_SESSION['user_id']=="") {
 									echo 'GA';
 									echo $temp;
 								}
-			                	echo "</td></tr></table>";
-				          }
+			                	echo "</td></tr>";
+				           }
 						
 						}
+						echo "</table>";
 					}
 				}
 
