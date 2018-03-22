@@ -99,7 +99,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   	if(is_array($row)) {
     		$_SESSION['user_id'] = $row['flag'];
-		echo $_SESSION['user_id']; 
    	 	$_SESSION['username']=$_POST['user_name'];
   	}
 }
