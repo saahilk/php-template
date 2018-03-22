@@ -136,23 +136,7 @@ $people=[
 					<b>
 <?php 
 echo $people[$_SESSION['user_id']]
-// if($_SESSION['user_id']=='1'){
-// 	echo 'Dean';
-// }
 
-// elseif ($_SESSION['user_id']=='2') {
-// 	echo 'DR';
-// }
-// elseif ($_SESSION['user_id']=='0') {
-// 	echo 'STAFF';
-// }
-
-
-// else {
-// 	$temp=$_SESSION['user_id']-2;
-// 	echo 'GA';
-// 	echo $temp;
-// }
 ?>
 
 		      	
