@@ -153,7 +153,7 @@ else {
 					?>
 				</br>
 					<form action="add_trackingid.php" method="post" enctype="multipart/form-data">
-  <table align="center" width="600" height="400" border="1" bgcolor="skyblue" style="background-color: #DDDDDD">
+  <table align="center" width="600" height="400" border="1" bgcolor="skyblue" style="background-color: #D6EAF8">
     <tr align="center">
       <td colspan="5"><h1 style="text-align:center">ADD A NEW TRACKING NUMBER</h1></td>
     </tr>
@@ -180,106 +180,35 @@ else {
 
 				}
 				elseif($_SESSION['user_id']=='1'){
-					
-					$servername = "localhost";
-					$username = "root";
-					$password = "";
-					$db="track";
-					// Create connection
-					$conn = new mysqli($servername, $username, $password, $db);
-					$user_id=$_SESSION['user_id'];
-					?>
-					<div>
-					</br>
-					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
-
-					<tr align="center" >
- 				  <th style="text-align: center;line-height: 25px;">S.no</th>
-				  <th style="text-align: center;line-height: 25px;">TRACKING ID</th>
-				  <th style="text-align: center;line-height: 25px;">STATUS</th>
-				  <th style="text-align: center;line-height: 25px;">DATE AND TIME</th>
-				  
-
-  
-  
-					</tr>
-
-
-					<?php
-
-
-
-
- 
-
-				$i=1;
-
-  
-  				
-  				$qry="SELECT * FROM document  order by timestamp desc";
-  				$run_blog=mysqli_query($conn,$qry);
-  while($row_blog=mysqli_fetch_array($run_blog))
-  {
-    $ID=$row_blog['ID'];
-    $timestamp=$row_blog['timestamp'];
-    $location=$row_blog['location'];
-    if($location=='1')
-    {
-    	$var="Dean";
-    }
-    elseif($location=='2')
-    {
-    	$var="DR";
-    }
-    elseif($location=='3')
-    {
-    	$var="GA1";
-    }
-    elseif($location=='4')
-    {
-    	$var="GA2";
-    }
-    elseif($location=='5')
-    {
-    	$var="GA3";
-    }
-    elseif($location=='6')
-    {
-    	$var="GA4";
-    }
-    elseif($location=='7')
-    {
-    	$var="GA5";
-    }
-    
-    
-
-
-
-     echo "<tr align='center'>
-  <td>$i.</td>
-  
-  
-  <td> $ID</td>
-  <td>$var</td>
-  
-<td> $timestamp</td>
-  
-  
-</tr>";
-
-$i=$i+1;
-
-  }
-
-  ?>
-
-
-				</table>
-				</div>
-
-
-					<?php
+					$qry="SELECT * FROM document";
+					$result=mysqli_query($conn,$qry);
+			        if($result) {
+				        echo "<table>
+				          <tr>
+				            <th>Tracking ID</th>
+				            <th>Status</th>				  
+				          </tr>";
+				        if(mysqli_num_rows($result)>0) {
+				          while($row = mysqli_fetch_assoc($result)) {
+				          	 echo '<tr>
+			                	<td>'.$row['ID'].'</td><td>';
+			                	
+								if($row['location']=='1'){
+									echo 'Dean';
+								}
+								elseif ($row['location']=='2') {
+									echo 'DR';
+								}
+								else{
+									$temp=$row['location']-2;
+									echo 'GA';
+									echo $temp;
+								}
+			                	echo "</td></tr>";
+				          }
+						
+						}
+					}
 				}
 				else{
 					$servername = "localhost";
@@ -291,8 +220,7 @@ $i=$i+1;
 					$user_id=$_SESSION['user_id'];
 					?>
 					<div>
-					</br>
-					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
+					<table  style="background-color:#F0F8FF;     margin-left: 280px;" align="center" width="1000"  border="5" >
 
 					<tr align="center" >
  				  <th style="text-align: center;line-height: 25px;">S.no</th>
@@ -338,8 +266,6 @@ $i=$i+1;
 $i=$i+1;
 
   }
-
-  ?>
 
 
 				</table>

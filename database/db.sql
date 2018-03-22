@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 22, 2018 at 07:17 AM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.20
+-- Generation Time: Mar 22, 2018 at 09:56 AM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.1.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,22 +29,24 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `document` (
-  `ID` varchar(15) NOT NULL,
-  `location` int(1) NOT NULL DEFAULT '1'
+  `ID` int(6) NOT NULL,
+  `location` int(1) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `document`
 --
 
-INSERT INTO `document` (`ID`, `location`) VALUES
-('#134324', 1),
-('#2132', 4),
-('#2323', 3),
-('#2391', 5),
-('#2432', 6),
-('#3435', 2),
-('#3593', 7);
+INSERT INTO `document` (`ID`, `location`, `timestamp`) VALUES
+(23721, 1, '2018-03-22 08:51:17'),
+(121212, 1, '2018-03-22 05:55:01'),
+(121221, 1, '2018-03-22 05:54:20'),
+(122112, 1, '2018-03-22 08:56:25'),
+(123455, 2, '2018-03-22 05:54:20'),
+(123456, 1, '2018-03-22 05:54:20'),
+(123457, 2, '2018-03-22 05:54:20'),
+(646464, 1, '2018-03-22 08:06:03');
 
 -- --------------------------------------------------------
 
@@ -62,7 +64,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`emailid`, `flag`) VALUES
-('saahilsuhas_b150470cs@nitc.ac.in', 1);
+('saahilsuhas_b150470cs@nitc.ac.in', 0),
+('maheshkumar_b150588cs@nitc.ac.in', 2),
+('saiswaroop_b150376cs@nitc.ac.in\r\n', 4);
 
 --
 -- Indexes for dumped tables
@@ -72,14 +76,13 @@ INSERT INTO `user` (`emailid`, `flag`) VALUES
 -- Indexes for table `document`
 --
 ALTER TABLE `document`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `ID` (`ID`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`flag`),
+  ADD PRIMARY KEY (`emailid`),
   ADD UNIQUE KEY `flag` (`flag`);
 COMMIT;
 
