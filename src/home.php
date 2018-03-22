@@ -30,7 +30,16 @@ if($_SESSION['user_id']=="") {
   	header('Location:index.php');
 }
 
-
+$people=[
+	0=>"Staff",
+	1=>"Dean",
+	2=>"DR",
+	3=>"GA1",
+	4=>"GA2",
+	5=>"GA3",
+	6=>"GA4",
+	7=>"GA5",
+];
 ?>
 <!DOCTYPE html>
 <title>NITC</title>
@@ -126,24 +135,24 @@ if($_SESSION['user_id']=="") {
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<b>
 <?php 
+echo $people[$_SESSION['user_id']]
+// if($_SESSION['user_id']=='1'){
+// 	echo 'Dean';
+// }
 
-if($_SESSION['user_id']=='1'){
-	echo 'Dean';
-}
-
-elseif ($_SESSION['user_id']=='2') {
-	echo 'DR';
-}
-elseif ($_SESSION['user_id']=='0') {
-	echo 'STAFF';
-}
+// elseif ($_SESSION['user_id']=='2') {
+// 	echo 'DR';
+// }
+// elseif ($_SESSION['user_id']=='0') {
+// 	echo 'STAFF';
+// }
 
 
-else {
-	$temp=$_SESSION['user_id']-2;
-	echo 'GA';
-	echo $temp;
-}
+// else {
+// 	$temp=$_SESSION['user_id']-2;
+// 	echo 'GA';
+// 	echo $temp;
+// }
 ?>
 
 		      	
@@ -196,7 +205,7 @@ else {
 				  <th style="text-align: center;line-height: 25px;">TRACKING ID</th>
 				  <th style="text-align: center;line-height: 25px;">STATUS</th>
 				  <th style="text-align: center;line-height: 25px;">DATE AND TIME</th>
-				  
+				  <th style="text-align: center;line-height: 25px;">Forward</th>
 
   
   
@@ -260,6 +269,7 @@ else {
   
   <td> $ID</td>
   <td>$var</td>
+  <td></td>
   
 <td> $timestamp</td>
   
