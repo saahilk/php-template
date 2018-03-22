@@ -217,14 +217,14 @@ echo $people[$_SESSION['user_id']]
     $var=$people[$location];
     
      echo '<tr align="center">
-  <td>$i.</td>
+  <td>'.$i.'</td>
   
   
-  <td> $ID</td>
-  <td>$var</td>
+  <td>'.$ID.'</td>
+  <td>'.$var.'</td>
   
   
-<td> $timestamp</td>
+<td>'.$timestamp.'</td>
 <td> 
 <select name="flist" form="fwd'.$i.'">';
 for($j=0;$j<=7;$j++){

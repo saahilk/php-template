@@ -26,7 +26,9 @@ $people=[
 	6=>"GA4",
 	7=>"GA5",
 ];
-
+echo 'Hello to forward';
+echo $_POST['flist'];
+echo $_POST['ID'];
 $ind=''.array_keys($_POST)[0];
 echo $ind;
 ?>
