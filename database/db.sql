@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2
+-- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 22, 2018 at 09:56 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.1.15
+-- Generation Time: Mar 22, 2018 at 03:54 PM
+-- Server version: 5.7.21-0ubuntu0.16.04.1
+-- PHP Version: 7.0.28-1+ubuntu16.04.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `track`
+-- Database: `db`
 --
 
 -- --------------------------------------------------------
@@ -30,23 +28,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `document` (
   `ID` int(6) NOT NULL,
-  `location` int(1) NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `location` int(1) DEFAULT NULL,
+  `timestamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `document`
---
-
-INSERT INTO `document` (`ID`, `location`, `timestamp`) VALUES
-(23721, 1, '2018-03-22 08:51:17'),
-(121212, 1, '2018-03-22 05:55:01'),
-(121221, 1, '2018-03-22 05:54:20'),
-(122112, 1, '2018-03-22 08:56:25'),
-(123455, 2, '2018-03-22 05:54:20'),
-(123456, 1, '2018-03-22 05:54:20'),
-(123457, 2, '2018-03-22 05:54:20'),
-(646464, 1, '2018-03-22 08:06:03');
 
 -- --------------------------------------------------------
 
@@ -56,7 +40,7 @@ INSERT INTO `document` (`ID`, `location`, `timestamp`) VALUES
 
 CREATE TABLE `user` (
   `emailid` varchar(90) NOT NULL,
-  `flag` int(1) NOT NULL
+  `flag` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -64,9 +48,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`emailid`, `flag`) VALUES
-('saahilsuhas_b150470cs@nitc.ac.in', 0),
+('aditi_b150063cs@nitc.ac.in', 7),
+('ameersuhail_b150592cs@nitc.ac.in', 5),
+('evareshma_b150129cs@nitc.ac.in', 4),
+('geo_b150005cs@nitc.ac.in', 0),
 ('maheshkumar_b150588cs@nitc.ac.in', 2),
-('saiswaroop_b150376cs@nitc.ac.in\r\n', 4);
+('saahilsuhas_b150470cs@nitc.ac.in', 3),
+('saiswaroop_b150376cs@nitc.ac.in', 1);
 
 --
 -- Indexes for dumped tables
@@ -83,8 +71,7 @@ ALTER TABLE `document`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`emailid`),
-  ADD UNIQUE KEY `flag` (`flag`);
-COMMIT;
+  ADD UNIQUE KEY `emailid` (`emailid`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
