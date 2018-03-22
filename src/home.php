@@ -209,8 +209,8 @@ echo $people[$_SESSION['user_id']]
 				$i=1;
 
   
-  				
-  				$qry="SELECT * FROM document  order by timestamp desc";
+  				$user_id=$_SESSION['user_id'];
+  				$qry="SELECT * FROM document WHERE location='$user_id' order by timestamp desc";
   				$run_blog=mysqli_query($conn,$qry);
   while($row_blog=mysqli_fetch_array($run_blog))
   {
