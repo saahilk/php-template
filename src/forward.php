@@ -26,9 +26,17 @@ $people=[
 	6=>"GA4",
 	7=>"GA5",
 ];
-echo 'Hello to forward';
-echo $_POST['flist'];
-echo $_POST['ID'];
-$ind=''.array_keys($_POST)[0];
-echo $ind;
+
+$flag=$_POST['flist'];
+$track_no=$_POST['ID'];
+$qry='UPDATE document SET location="'.$flag.'" WHERE ID="'.$track_no.'"';
+if($conn->query($qry)==TRUE)
+{
+    header('Location:home.php');
+}
+else
+{
+	echo "<script>alert('Failed')</script>";
+  echo "<script>window.open('home.php','_self')</script>";
+}
 ?>
