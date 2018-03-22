@@ -76,7 +76,7 @@
 		</style>
 	</head>
 <?php
-session_start();
+
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
 $username = $url["user"];
@@ -123,6 +123,7 @@ if($_SESSION['user_id']=="") {
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<a href="index.php"><b>
 <?php 
+echo $_SESSION['user_id'];
 if($_SESSION['user_id']=='1'){
 	echo 'Dean';
 }
