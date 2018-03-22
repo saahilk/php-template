@@ -76,7 +76,7 @@
 		</style>
 	</head>
 <?php
-session_start();
+// session_start();
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
 $username = $url["user"];
@@ -122,21 +122,21 @@ if($_SESSION['user_id']=="") {
 		    
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<a href="index.php"><b>
-<?php 
-if($_SESSION['user_id']=='1'){
-	echo 'Dean';
-}
+						<?php 
+						if($_SESSION['user_id']=='1'){
+							echo 'Dean';
+						}
 
-elseif ($_SESSION['user_id']=='2') {
-	echo 'DR';
-}
+						elseif ($_SESSION['user_id']=='2') {
+							echo 'DR';
+						}
 
-else {
-	$temp=$_SESSION['user_id']-2;
-	echo 'GA';
-	echo $temp;
-}
-?>
+						else {
+							$temp=$_SESSION['user_id']-2;
+							echo 'GA';
+							echo $temp;
+						}
+						?>
 		      	
 		   		     	</b></a>
 				</li>
@@ -176,7 +176,7 @@ else {
 									echo 'GA';
 									echo $temp;
 								}
-			                	echo "</td></tr>";
+			                	echo "</td></tr></table>";
 
 				          }
 						
@@ -210,7 +210,7 @@ else {
 									echo 'GA';
 									echo $temp;
 								}
-			                	echo "</td></tr>";
+			                	echo "</td></tr></table>";
 				          }
 						
 						}
