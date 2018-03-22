@@ -150,7 +150,7 @@ else {
 				}
 				elseif($_SESSION['user_id']=='1'){
 					$qry="SELECT * FROM document";
-					$result=mysqli_query($conn,$sql);
+					$result=mysqli_query($conn,$qry);
 			        if($result) {
 				        echo "<table>
 				          <tr>
@@ -184,8 +184,8 @@ else {
 					}
 				}
 				else{
-					$qry="SELECT * FROM document WHERE location="._SESSION['user_id'];
-					$result=mysqli_query($conn,$sql);
+					$qry="SELECT * FROM document WHERE location=".$_SESSION['user_id'];
+					$result=mysqli_query($conn,$qry);
 			        if($result) {
 				        echo "<table>
 				          <tr>
