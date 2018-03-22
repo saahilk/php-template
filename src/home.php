@@ -40,6 +40,9 @@ $people=[
 	6=>"GA4",
 	7=>"GA5",
 ];
+
+$user_id=$_SESSION['user_id'];
+
 ?>
 <!DOCTYPE html>
 <title>NITC</title>
@@ -227,8 +230,8 @@ echo $people[$_SESSION['user_id']]
 <td>'.$timestamp.'</td>
 <td> 
 <select name="flist" form="fwd'.$i.'">';
-for($j=0;$j<=7;$j++){
-	if($j!=$location and $j!=_SESSION['user_id'])
+for($j=1;$j<=7;$j++){
+	if($j!=$location and $j!=$user_id)
 	{
 		echo '<option value="'.$j.'">'.$people[$j].'</option>';
 	}
@@ -267,7 +270,8 @@ $i=$i+1;
  				  <th style="text-align: center;line-height: 25px;">S.no</th>
 				  <th style="text-align: center;line-height: 25px;">TRACKING ID</th>
 				  <th style="text-align: center;line-height: 25px;">DATE AND TIME</th>
-
+				  <th style="text-align: center;line-height: 25px;">Forward</th>
+				  <th style="text-align: center;line-height: 25px;">Submit</th>
   
   
 					</tr>
@@ -291,18 +295,28 @@ $i=$i+1;
     $ID=$row_blog['ID'];
     $timestamp=$row_blog['timestamp'];
 
+ echo '<tr align="center">
+  <td>'.$i.'</td>
+  
+  
+  <td>'.$ID.'</td>
+<td>'.$timestamp.'</td>
+<td> 
+<select name="flist" form="fwd'.$i.'">';
+for($j=1;$j<=7;$j++){
+	if($j!=$user_id)
+	{
+		echo '<option value="'.$j.'">'.$people[$j].'</option>';
+	}
+}
 
-     echo "<tr align='center'>
-  <td>$i.</td>
+echo '</select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" >
+	<input type="hidden" name="ID" value="'.$ID.'">
+	<input align="center" type="submit">
+</form></td>
   
   
-  <td> $ID</td>
-  
-  
-<td> $timestamp</td>
-  
-  
-</tr>";
+</tr>';
 
 $i=$i+1;
 
