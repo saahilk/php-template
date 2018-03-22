@@ -78,10 +78,10 @@
 <?php
 
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db="track";
+$servername = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
 // Create connection
 $conn = new mysqli($servername, $username, $password, $db);
 

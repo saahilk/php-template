@@ -11,10 +11,11 @@ $timestamp=date('Y-m-d H:i:s');
 
 $ID=$_POST['tracking_id'];
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db="track";
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$servername = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
 
 $conn = new mysqli($servername, $username, $password, $db);
 
