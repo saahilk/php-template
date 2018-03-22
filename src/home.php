@@ -77,9 +77,6 @@
 	</head>
 <?php
 
-if($_SESSION['user_id']=="") {
-  	header('Location:index.php');
-}
 
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
@@ -102,9 +99,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   	$row  = mysqli_fetch_array($result);
 
   	if(is_array($row)) {
-    		$_SESSION['user_id'] = $row['flag'];
+    	$_SESSION['user_id'] = $row['flag'];
    	 	$_SESSION['username']=$_POST['user_name'];
   	}
+}
+if($_SESSION['user_id']=="") {
+  	header('Location:index.php');
 }
 
 
