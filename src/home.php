@@ -254,6 +254,81 @@ $i=$i+1;
 
 				</table>
 				</div>
+</br>
+</br>
+
+<div>
+					</br>
+					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
+
+					<tr align="center" >
+ 				  <th style="text-align: center;line-height: 25px;">S.no</th>
+				  <th style="text-align: center;line-height: 25px;">TRACKING ID</th>
+				  <th style="text-align: center;line-height: 25px;">STATUS</th>
+				  <th style="text-align: center;line-height: 25px;">DATE AND TIME</th>
+				  <th style="text-align: center;line-height: 25px;">Forward</th>
+				  <th style="text-align: center;line-height: 25px;">Submit</th>
+  
+  
+					</tr>
+
+
+					<?php
+
+
+
+
+ 
+
+				$i=1;
+
+  
+  				$user_id=$_SESSION['user_id'];
+  				$qry="SELECT * FROM document WHERE location<>'$user_id' order by timestamp desc";
+  				$run_blog=mysqli_query($conn,$qry);
+  while($row_blog=mysqli_fetch_array($run_blog))
+  {
+    $ID=$row_blog['ID'];
+    $timestamp=$row_blog['timestamp'];
+    $location=$row_blog['location'];
+    $var=$people[$location];
+    
+     echo '<tr align="center">
+  <td>'.$i.'</td>
+  
+  
+  <td>'.$ID.'</td>
+  <td>'.$var.'</td>
+  
+  
+<td>'.$timestamp.'</td>
+<td> 
+<select name="flist" form="fwd'.$i.'">';
+for($j=1;$j<=7;$j++){
+	if($j!=$location and $j!=$user_id)
+	{
+		echo '<option value="'.$j.'">'.$people[$j].'</option>';
+	}
+}
+
+echo '</select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" >
+	<input type="hidden" name="ID" value="'.$ID.'">
+	<input align="center" type="submit">
+</form></td>
+  
+  
+</tr>';
+
+$i=$i+1;
+
+  }
+
+  ?>
+
+
+				</table>
+				</div>
+
 
 
 					<?php
