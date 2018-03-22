@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
 $username = $url["user"];
@@ -206,7 +206,7 @@ echo $people[$_SESSION['user_id']]
 				  <th style="text-align: center;line-height: 25px;">STATUS</th>
 				  <th style="text-align: center;line-height: 25px;">DATE AND TIME</th>
 				  <th style="text-align: center;line-height: 25px;">Forward</th>
-
+				  <th style="text-align: center;line-height: 25px;">Submit</th>
   
   
 					</tr>
@@ -231,39 +231,7 @@ echo $people[$_SESSION['user_id']]
     $timestamp=$row_blog['timestamp'];
     $location=$row_blog['location'];
     $var=$people[$location];
-    // if($location=='1')
-    // {
-    // 	$var="Dean";
-    // }
-    // elseif($location=='2')
-    // {
-    // 	$var="DR";
-    // }
-    // elseif($location=='3')
-    // {
-    // 	$var="GA1";
-    // }
-    // elseif($location=='4')
-    // {
-    // 	$var="GA2";
-    // }
-    // elseif($location=='5')
-    // {
-    // 	$var="GA3";
-    // }
-    // elseif($location=='6')
-    // {
-    // 	$var="GA4";
-    // }
-    // elseif($location=='7')
-    // {
-    // 	$var="GA5";
-    // }
     
-    
-
-
-
      echo "<tr align='center'>
   <td>$i.</td>
   
@@ -274,19 +242,21 @@ echo $people[$_SESSION['user_id']]
   
 <td> $timestamp</td>
 <td> 
-<select>";
+<select name='flist' form='fwd'".$i.">";
 for($j=0;$j<=7;$j++){
 	if($j!=$location and $j!=_SESSION['user_id'])
 	{
 		echo '<option value="'.$j.'">'.$people[$j].'</option>';
 	}
-
 }
 
-echo "</select></td>
+echo '</select><form action="forward.php" id="fwd"'.$i.'>
+	<input type="hidden" name="ID" value="'.$ID.'">
+	<input align="center" type="submit">
+</form></td>
   
   
-</tr>";
+</tr>';
 
 $i=$i+1;
 

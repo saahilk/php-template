@@ -29,6 +29,11 @@ if($insert_blo)
   echo "<script>alert('THE NEW TRACKING NUMBER IS ADDED!')</script>";
   echo "<script>window.open('home.php','_self')</script>";
 }
+else
+{
+ echo "<script>alert('Duplicate tracking number is added.')</script>";
+  echo "<script>window.open('home.php','_self')</script>";
+}
 
 
 ?>
