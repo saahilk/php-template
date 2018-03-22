@@ -230,34 +230,35 @@ echo $people[$_SESSION['user_id']]
     $ID=$row_blog['ID'];
     $timestamp=$row_blog['timestamp'];
     $location=$row_blog['location'];
-    if($location=='1')
-    {
-    	$var="Dean";
-    }
-    elseif($location=='2')
-    {
-    	$var="DR";
-    }
-    elseif($location=='3')
-    {
-    	$var="GA1";
-    }
-    elseif($location=='4')
-    {
-    	$var="GA2";
-    }
-    elseif($location=='5')
-    {
-    	$var="GA3";
-    }
-    elseif($location=='6')
-    {
-    	$var="GA4";
-    }
-    elseif($location=='7')
-    {
-    	$var="GA5";
-    }
+    $var=$people[$location];
+    // if($location=='1')
+    // {
+    // 	$var="Dean";
+    // }
+    // elseif($location=='2')
+    // {
+    // 	$var="DR";
+    // }
+    // elseif($location=='3')
+    // {
+    // 	$var="GA1";
+    // }
+    // elseif($location=='4')
+    // {
+    // 	$var="GA2";
+    // }
+    // elseif($location=='5')
+    // {
+    // 	$var="GA3";
+    // }
+    // elseif($location=='6')
+    // {
+    // 	$var="GA4";
+    // }
+    // elseif($location=='7')
+    // {
+    // 	$var="GA5";
+    // }
     
     
 
@@ -269,9 +270,20 @@ echo $people[$_SESSION['user_id']]
   
   <td> $ID</td>
   <td>$var</td>
-  <td></td>
+  
   
 <td> $timestamp</td>
+<td> 
+<select>";
+for($j=0;$j<=7;$j++){
+	if($j!=$location and $j!=_SESSION['user_id'])
+	{
+		echo '<option value="'.$j.'">'.$people[$j].'</option>';
+	}
+
+}
+
+echo "</select></td>
   
   
 </tr>";
