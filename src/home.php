@@ -252,8 +252,7 @@ echo $people[$_SESSION['user_id']]
   <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
   <td>'.$timestamp2.'</td>
-  <td> <form action="history1.php" method ="post"><input type="hidden" name="track_id" value=", $ID," ><input type="submit" value="History"></form></td>  
-
+  <td> <form action="history1.php" method ="post"><input type="hidden" name="track_id" value="'.$ID.'"><input type="submit" value="History"></form></td>  
 <td> 
 <select name="flist" form="fwd'.$i.'">';
 for($j=1;$j<=7;$j++){
@@ -324,18 +323,17 @@ $i=$i+1;
     $submitted_by=$row_blog['submitted_by'];
     $timestamp2=$row_blog['submitted_on'];
     
-     echo "<tr align='center'>
-  <td>$i.</td>
+     echo '<tr align="center">
+  <td>'.$i.'</td>
   
   
-  <td>$ID</td>
-  <td>$location</td>
-  <td>$timestamp1</td>
-  <td>$remarks</td>
-  <td>$submitted_by</td>
-<td>$timestamp2</td>
-<td><a href='history.php?track_id=$ID'>history</a></td>
-" ;
+  <td>'.$ID.'</td>
+  <td>'.$location.'</td>
+  <td>'.$timestamp1.'</td>
+  <td>'.$remarks.'</td>
+  <td>'.$submitted_by.'</td>
+<td>'.$timestamp2.'</td>
+<td><a href="history.php?track_id='.$ID'">History</a></td>';
 
 
 
