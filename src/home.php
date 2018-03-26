@@ -172,12 +172,12 @@ echo $people[$_SESSION['user_id']]
     
     <tr>
     	 <td align="right">Submitted by: </td>
-    	<td><input type="text" name="addresser" pattern="[A-Za-z ]" title="Only alphabets and space allowed" required></td>
+    	<td><input type="text" name="addresser" pattern="[A-Za-z ]+" title="Only alphabets and space allowed" required></td>
     </tr>
     
     <tr>
     	 <td align="right">Remarks: </td>
-    	<td><input type="text" name="remarks" pattern="[A-Za-z ]" title="Only alphabets and space allowed" required></td>
+    	<td><input type="text" name="remarks" pattern="[A-Za-z ]+" title="Only alphabets and space allowed" required></td>
     </tr>
     
     <tr align="center" style="font-size:1.5em;">
@@ -298,7 +298,7 @@ $i=$i+1;
 
   
   				$user_id=$_SESSION['user_id'];
-  				$qry="SELECT * FROM document WHERE location<>'$user_id' order by timestamp desc";
+  				$qry="SELECT * FROM document WHERE location='$user_id' order by timestamp desc";
   				$run_blog=mysqli_query($conn,$qry);
   while($row_blog=mysqli_fetch_array($run_blog))
   {
