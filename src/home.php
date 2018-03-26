@@ -257,7 +257,7 @@ echo $people[$_SESSION['user_id']]
 for($j=1;$j<=7;$j++){
 	if($j!=$location and $j!=$user_id)
 	{
-		echo '<option value="'.$j.'">'.$people[$j].'</option>';
+		echo '<option value='$j'>'.$people[$j].'</option>';
 	}
 }
 
