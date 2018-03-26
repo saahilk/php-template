@@ -202,7 +202,7 @@ echo $people[$_SESSION['user_id']]
 					<div>
 					<h2 align="center">Pending documents</h2>
 					<br>
-					<th style="text-align: center;line-height: 25px;">PENDING TASKS</th>
+				
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
 
 					<tr align="center" >
@@ -282,8 +282,25 @@ $i=$i+1;
 				</table>
 				</div>
 </br>
-	<a href="otherfiles.php" target="_blank">All other files</a> 
 </br>
+
+<div>
+					</br>
+					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
+
+					<tr align="center" >
+ 				 <th style="text-align: center;line-height: 25px;">S.No</th>
+				  <th style="text-align: center;line-height: 25px;">Tracking ID</th>
+				  <th style="text-align: center;line-height: 25px;">Currently At</th>
+				  <th style="text-align: center;line-height: 25px;">Received ON</th>
+				  <th style="text-align: center;line-height: 25px;">Remarks</th>
+				  <th style="text-align: center;line-height: 25px;">Submitted By</th>
+				  <th style="text-align: center;line-height: 25px;">Submitted On</th>
+				  <th style="text-align: center;line-height: 25px;">History</th>
+				  <th style="text-align: center;line-height: 25px;">Complete</th>
+  
+  
+					</tr>
 
 
 					<?php
@@ -345,7 +362,20 @@ $i=$i+1;
 					?>
 					<div>
 					</br>
-				
+					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
+
+					<tr align="center" >
+ 				 <th style="text-align: center;line-height: 25px;">S.no</th>
+				  <th style="text-align: center;line-height: 25px;">Tracking ID</th>
+				  <th style="text-align: center;line-height: 25px;">Received ON</th>
+				  <th style="text-align: center;line-height: 25px;">Remarks</th>
+				  <th style="text-align: center;line-height: 25px;">Submitted By</th>
+				  <th style="text-align: center;line-height: 25px;">Submitted On</th>
+				  <th style="text-align: center;line-height: 25px;">Forward</th>
+				  <th style="text-align: center;line-height: 25px;">Submit</th>
+  
+  
+					</tr>
 
 
 					<?php
