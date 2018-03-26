@@ -11,7 +11,7 @@ $db = substr($url["path"], 1);
 date_default_timezone_set('Asia/Kolkata');
 
 
-$timestamp=date('Y-m-d H:i:s');
+$timestamp=date('d m y | h:i');
 
 $conn = new mysqli($servername, $username, $password, $db);
 
