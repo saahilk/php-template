@@ -151,6 +151,11 @@ echo $people[$_SESSION['user_id']]
 		    	</ul>
 		</div>
 	<center>
+		<?php
+
+if(isset($_GET['track_id']))
+{
+	?>
 		
 		<div>
 					</br>
@@ -174,7 +179,7 @@ echo $people[$_SESSION['user_id']]
  
 
 				$i=1;
-				$ID=$_POST['ID'];
+				$ID=$_GET['track_id'];
   				$user_id=$_SESSION['user_id'];
   				$qry="SELECT * FROM history WHERE ID='$ID' order by starttime asc";
   				$run_blog=mysqli_query($conn,$qry);
@@ -213,7 +218,10 @@ $i=$i+1;
 </br>
 </br>
 
+<?php
 
+}
+?>
 
 			</center>
 

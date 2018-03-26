@@ -200,14 +200,9 @@ echo $people[$_SESSION['user_id']]
 
 					
 					?>
-<<<<<<< HEAD
+
 					<div>
 					<h3 align="left">Pending documents</h3>
-=======
-					<div class="row">
-					<h2 align="center">Pending documents</h2>
-				</div>
->>>>>>> fe1725aae2ff8b35c62d50d1c40d27373bb50b25
 					<br>
 				
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
@@ -221,7 +216,7 @@ echo $people[$_SESSION['user_id']]
 				  <th style="text-align: center;line-height: 25px;">Submitted on</th>
 				  <th style="text-align: center;line-height: 25px;">Forward</th>
 				  <th style="text-align: center;line-height: 25px;">Submit</th>
-  
+  				  <th style="text-align: center;line-height: 25px;">History</th>
   
 					</tr>
 
@@ -272,7 +267,7 @@ echo '</select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" 
 	<input align="center" type="submit">
 </form></td>
   
-  
+  <td><a href='history.php?track_id=$ID'>view</a></td>
 </tr>';
 
 $i=$i+1;
