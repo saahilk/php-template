@@ -202,7 +202,7 @@ echo $people[$_SESSION['user_id']]
 					<div>
 					<h2 align="center">Pending documents</h2>
 					<br>
-				
+					<th style="text-align: center;line-height: 25px;">PENDING TASKS</th>
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
 
 					<tr align="center" >
@@ -219,7 +219,7 @@ echo $people[$_SESSION['user_id']]
   				  
   
 					</tr>
-
+<a href="otherfiles.php" target="_blank">All other files</a> 
 
 					<?php
 
@@ -286,6 +286,7 @@ $i=$i+1;
 
 <div>
 					</br>
+					<th style="text-align: center;line-height: 25px;">PENDING TASKS</th>
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
 
 					<tr align="center" >
