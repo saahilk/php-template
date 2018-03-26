@@ -282,12 +282,13 @@ $i=$i+1;
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
 
 					<tr align="center" >
- 				 <th style="text-align: center;line-height: 25px;">S.no</th>
-				  <th style="text-align: center;line-height: 25px;">TRACKING ID</th>
-				  <th style="text-align: center;line-height: 25px;">RECIEVED ON</th>
-				  <th style="text-align: center;line-height: 25px;">REMARKS</th>
-				  <th style="text-align: center;line-height: 25px;">SUBMITTED BY</th>
-				  <th style="text-align: center;line-height: 25px;">SUBMITTED ON</th>
+ 				 <th style="text-align: center;line-height: 25px;">S.No</th>
+				  <th style="text-align: center;line-height: 25px;">Tracking ID</th>
+				  <th style="text-align: center;line-height: 25px;">Currently At</th>
+				  <th style="text-align: center;line-height: 25px;">Received ON</th>
+				  <th style="text-align: center;line-height: 25px;">Remarks</th>
+				  <th style="text-align: center;line-height: 25px;">Submitted By</th>
+				  <th style="text-align: center;line-height: 25px;">Submitted On</th>
 				  
   
   
