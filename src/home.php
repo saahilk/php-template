@@ -199,7 +199,7 @@ echo $people[$_SESSION['user_id']]
 					
 					?>
 					<div class="row">
-					<h3 align="left">Pending documents</h3>
+					<h2 align="center">Pending documents</h2>
 				</div>
 					<br>
 				
