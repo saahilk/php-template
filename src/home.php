@@ -213,6 +213,7 @@ echo $people[$_SESSION['user_id']]
 				  <th style="text-align: center;line-height: 25px;">Submitted by</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted on</th>
 				  <th style="text-align: center;line-height: 25px;">History</th>
+				  <th style="text-align: center;line-height: 25px;">Complete</th>
 				  <th style="text-align: center;line-height: 25px;">Forward</th>
 				  <th style="text-align: center;line-height: 25px;">Submit</th>
   				  
@@ -296,6 +297,7 @@ $i=$i+1;
 				  <th style="text-align: center;line-height: 25px;">Submitted By</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted On</th>
 				  <th style="text-align: center;line-height: 25px;">History</th>
+				  <th style="text-align: center;line-height: 25px;">Complete</th>
   
   
 					</tr>
