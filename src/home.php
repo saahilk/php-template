@@ -214,9 +214,10 @@ echo $people[$_SESSION['user_id']]
 				  <th style="text-align: center;line-height: 25px;">Remarks</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted by</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted on</th>
+				   <th style="text-align: center;line-height: 25px;">History</th>
 				  <th style="text-align: center;line-height: 25px;">Forward</th>
 				  <th style="text-align: center;line-height: 25px;">Submit</th>
-  				  <th style="text-align: center;line-height: 25px;">History</th>
+  				 
   
 					</tr>
 
@@ -244,7 +245,7 @@ echo $people[$_SESSION['user_id']]
 
     
     
-     echo '<tr align="center">
+     echo "<tr align="center">
   <td>'.$i.'</td>
   
   
@@ -253,6 +254,8 @@ echo $people[$_SESSION['user_id']]
   <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
 <td>'.$timestamp2.'</td>
+<td><a href='view.php?blog_id=$blog_id'>view</a></td>
+  
 <td> 
 <select name="flist" form="fwd'.$i.'">';
 for($j=1;$j<=7;$j++){
@@ -267,8 +270,8 @@ echo '</select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" 
 	<input align="center" type="submit">
 </form></td>
   
-  <td><a href='history.php?track_id=$ID'>view</a></td>
-</tr>';
+  
+</tr>";
 
 $i=$i+1;
 
