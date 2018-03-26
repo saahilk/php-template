@@ -267,7 +267,7 @@ echo $people[$_SESSION['user_id']]
   
   
   <td>'.$ID.'</td>
-  <td>'.$timestamp1.'</td>
+  <td>'.$timestamp1->format('d-m-Y | H:i').'</td>
   <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
   <td>'.$timestamp2.'</td>
