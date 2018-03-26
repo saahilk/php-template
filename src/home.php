@@ -244,7 +244,7 @@ echo $people[$_SESSION['user_id']]
     
     
      echo "
-    <tr align="center">
+    <tr align='center'>
   <td>'.$i.'</td>
   
   
@@ -257,7 +257,7 @@ echo $people[$_SESSION['user_id']]
 
 echo"
 <td> 
-<select name="flist" form="fwd'.$i.'">";
+<select name='flist' form="fwd'.$i.'">";
 
 for($j=1;$j<=7;$j++){
 	if($j!=$location and $j!=$user_id)
@@ -266,12 +266,12 @@ for($j=1;$j<=7;$j++){
 	}
 }
 
-echo "</select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" >
-	<input type="hidden" name="ID" value="'.$ID.'">
-	<input align="center" type="submit">
+echo "</select></td><td><form action='forward.php' id="fwd'.$i.'" method='post' >
+	<input type='hidden' name='ID' value="'.$ID.'">
+	<input align='center' type='submit'>
 </form></td>
   </tr>";
-  
+
 $i=$i+1;
 
   }
