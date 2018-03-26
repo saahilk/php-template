@@ -199,6 +199,7 @@ echo $people[$_SESSION['user_id']]
 					?>
 					<div>
 					</br>
+					<th style="text-align: center;line-height: 25px;">PENDING TASKS</th>
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
 
 					<tr align="center" >
