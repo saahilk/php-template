@@ -311,10 +311,10 @@ $i=$i+1;
  
 
 				$i=1;
-
+				$temp=9;
   
   				$user_id=$_SESSION['user_id'];
-  				$qry="SELECT * FROM document WHERE location<>'$user_id' order by recieved_on desc";
+  				$qry="SELECT * FROM document WHERE location<>'$user_id' AND location<'$temp' order by recieved_on desc";
   				$run_blog=mysqli_query($conn,$qry);
   while($row_blog=mysqli_fetch_array($run_blog))
   {
