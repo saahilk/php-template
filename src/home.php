@@ -266,7 +266,7 @@ for($j=1;$j<=7;$j++){
 	}
 }
 
-echo "</select></td><td><form action='forward.php' method='post' >
+echo "</select></td><td><form action='forward.php' id=",$i," method='post' >
 	<input type='hidden' name='ID' value=",$ID,">
 	<input align='center' type='submit'>
 </form></td>
