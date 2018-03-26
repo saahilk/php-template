@@ -159,12 +159,26 @@ echo $people[$_SESSION['user_id']]
     </tr>
 
 <tr>
-      <td align="right">Tracking Id</td>
-      <td><input type="text"  name="tracking_id" value="" /></td>
+      <td align="right">Tracking Id: </td>
+      <td><input type="text"  name="tracking_id" value="" required></td>
+    </tr>
+    <tr>
+    	 <td align="right">Submit to: </td>
+    	<td><select name="addressee" required>
+    		<option value="1">Dean</option>
+    		<option value="2">DR</option>
+    	</select></td>
     </tr>
     
+    <tr>
+    	 <td align="right">Submitted by: </td>
+    	<td><input type="text" name="addresser" pattern="[A-Za-z ]" title="Only alphabets and space allowed" required></td>
+    </tr>
     
-   
+    <tr>
+    	 <td align="right">Remarks: </td>
+    	<td><input type="text" name="addresser" pattern="[A-Za-z ]" title="Only alphabets and space allowed" required></td>
+    </tr>
     
     <tr align="center" style="font-size:1.5em;">
       <td colspan="5"><input type="submit" name="insert_post" value="Submit"/></td>

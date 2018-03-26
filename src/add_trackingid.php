@@ -10,6 +10,8 @@ date_default_timezone_set('Asia/Kolkata');
 $timestamp=date('Y-m-d H:i:s');
 
 $ID=$_POST['tracking_id'];
+$to=$_POST['addressee'];
+$from=$_POST['addresser'];
 
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
