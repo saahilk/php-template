@@ -198,8 +198,8 @@ echo $people[$_SESSION['user_id']]
 					
 					?>
 					<div>
-					<h3>Pending documents</h3>
-					<hr>
+					<h3 align="left">Pending documents</h3>
+					<br>
 				
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
 
