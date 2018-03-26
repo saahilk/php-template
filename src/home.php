@@ -160,7 +160,7 @@ echo $people[$_SESSION['user_id']]
 
 <tr>
       <td align="right">Tracking Id:</td>
-      <td><input type="text"  name="tracking_id" maxlength="15" minlength="15"  pattern="[A-Za-z0-9]+" placeholder="15 alphanumeric characters" required></td>
+      <td><input type="text" name="tracking_id" maxlength="15" minlength="15"  pattern="[A-Za-z0-9]+" placeholder="15 alphanumeric characters" required></td>
     </tr>
     <tr>
     	 <td align="right">Submit to: </td>
@@ -198,17 +198,18 @@ echo $people[$_SESSION['user_id']]
 					
 					?>
 					<div>
-					</br>
-					<th style="text-align: center;line-height: 25px;">PENDING TASKS</th>
+					<h3>Pending documents</h3>
+					<hr>
+				
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
 
 					<tr align="center" >
  				  <th style="text-align: center;line-height: 25px;">S.no</th>
-				  <th style="text-align: center;line-height: 25px;">TRACKING ID</th>
-				  <th style="text-align: center;line-height: 25px;">RECIEVED ON</th>
-				  <th style="text-align: center;line-height: 25px;">REMARKS</th>
-				  <th style="text-align: center;line-height: 25px;">SUBMITTED BY</th>
-				  <th style="text-align: center;line-height: 25px;">SUBMITTED ON</th>
+				  <th style="text-align: center;line-height: 25px;">Tracking ID</th>
+				  <th style="text-align: center;line-height: 25px;">Recieved on</th>
+				  <th style="text-align: center;line-height: 25px;">Remarks</th>
+				  <th style="text-align: center;line-height: 25px;">Submitted by</th>
+				  <th style="text-align: center;line-height: 25px;">Submitted on</th>
 				  <th style="text-align: center;line-height: 25px;">Forward</th>
 				  <th style="text-align: center;line-height: 25px;">Submit</th>
   

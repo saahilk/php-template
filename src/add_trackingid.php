@@ -29,7 +29,7 @@ $insert_blo= mysqli_query($conn, $qry);
 
 if($insert_blo)
 {
-  echo "<script>alert('THE NEW TRACKING NUMBER IS ADDED!')</script>";
+  echo "<script>alert('Form Submitted!')</script>";
   echo "<script>window.open('home.php','_self')</script>";
 }
 else
