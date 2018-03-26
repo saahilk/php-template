@@ -324,16 +324,16 @@ $i=$i+1;
     $submitted_by=$row_blog['submitted_by'];
     $timestamp2=$row_blog['submitted_on'];
     
-     echo "<tr align="center">
-  <td>'.$i.'</td>
+     echo "<tr align='center'>
+  <td>$i.</td>
   
   
-  <td>'.$ID.'</td>
-  <td>'.$location.'</td>
-  <td>'.$timestamp1.'</td>
-  <td>'.$remarks.'</td>
-  <td>'.$submitted_by.'</td>
-<td>'.$timestamp2.'</td>
+  <td>$ID</td>
+  <td>$location</td>
+  <td>$timestamp1</td>
+  <td>$remarks</td>
+  <td>$submitted_by</td>
+<td>$timestamp2</td>
 <td><a href='history.php?track_id=$ID'>history</a></td>
 " ;
 
