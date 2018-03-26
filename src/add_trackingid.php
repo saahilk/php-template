@@ -7,7 +7,7 @@ $user_id=$_SESSION['user_id'];
 date_default_timezone_set('Asia/Kolkata');
 
 
-$timestamp=date('d-m-y | H:i');
+$timestamp=date('d-m-Y | H:i');
 
 $ID=$_POST['tracking_id'];
 $to=$_POST['addressee'];
