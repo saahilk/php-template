@@ -252,7 +252,7 @@ echo $people[$_SESSION['user_id']]
   <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
   <td>'.$timestamp2.'</td>
-  <td> <form action="history.php" method ="post"><input type="hidden" name="track_id" value=", $ID ," ><input type="submit" value="History"></form></td>  
+  <td> <form action="history1.php" method ="post"><input type="hidden" name="track_id" value=", $ID ," ><input type="submit" value="History"></form></td>  
 
 <td> 
 <select name="flist" form="fwd'.$i.'">';
