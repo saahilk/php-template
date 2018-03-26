@@ -23,7 +23,7 @@ $db = substr($url["path"], 1);
 $conn = new mysqli($servername, $username, $password, $db);
 
 
-$qry="insert into document(ID,location,submitted_by,remarks) values ('$ID','$to',$from,'$remarks')";
+$qry="insert into document(ID,location,submitted_on,submitted_by,remarks,recieved_on) values ('$ID','$to','$timestamp','$from','$remarks','$timestamp')";
 
 $insert_blo= mysqli_query($conn, $qry);
 
@@ -34,7 +34,7 @@ if($insert_blo)
 }
 else
 {
- echo "<script>alert('Duplicate tracking number is added.')</script>";
+ echo "<script>alert('Failed')</script>";
   echo "<script>window.open('home.php','_self')</script>";
 }
 
