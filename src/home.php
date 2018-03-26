@@ -219,7 +219,7 @@ echo $people[$_SESSION['user_id']]
   				  
   
 					</tr>
-<a href="otherfiles.php" target="_blank">All other files</a> 
+
 
 					<?php
 
@@ -282,26 +282,8 @@ $i=$i+1;
 				</table>
 				</div>
 </br>
+	<a href="otherfiles.php" target="_blank">All other files</a> 
 </br>
-
-<div>
-					</br>
-					<th style="text-align: center;line-height: 25px;">PENDING TASKS</th>
-					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
-
-					<tr align="center" >
- 				 <th style="text-align: center;line-height: 25px;">S.No</th>
-				  <th style="text-align: center;line-height: 25px;">Tracking ID</th>
-				  <th style="text-align: center;line-height: 25px;">Currently At</th>
-				  <th style="text-align: center;line-height: 25px;">Received ON</th>
-				  <th style="text-align: center;line-height: 25px;">Remarks</th>
-				  <th style="text-align: center;line-height: 25px;">Submitted By</th>
-				  <th style="text-align: center;line-height: 25px;">Submitted On</th>
-				  <th style="text-align: center;line-height: 25px;">History</th>
-				  <th style="text-align: center;line-height: 25px;">Complete</th>
-  
-  
-					</tr>
 
 
 					<?php
@@ -312,10 +294,10 @@ $i=$i+1;
  
 
 				$i=1;
-				$temp=9;
+
   
   				$user_id=$_SESSION['user_id'];
-  				$qry="SELECT * FROM document WHERE location<>'$user_id' AND location<'$temp' order by recieved_on desc";
+  				$qry="SELECT * FROM document WHERE location<>'$user_id' order by recieved_on desc";
   				$run_blog=mysqli_query($conn,$qry);
   while($row_blog=mysqli_fetch_array($run_blog))
   {
