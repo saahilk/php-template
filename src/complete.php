@@ -70,8 +70,9 @@ $qry1='UPDATE document SET location="'.$var1.'" WHERE ID="'.$track_no.'"';
 
 if($insert_blo&&$conn->query($qry1)==TRUE)
 {
-	echo "<script>alert('Document is registered as complete')</script>";
-    header('Location:home.php');
+	
+     echo "<script>alert('Document is marked as complete!')</script>";
+  echo "<script>window.open('home.php','_self')</script>";
 }
 else
 {
