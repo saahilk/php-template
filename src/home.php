@@ -253,6 +253,7 @@ echo $people[$_SESSION['user_id']]
   <td>'.$submitted_by.'</td>
   <td>'.$timestamp2.'</td>
   <td><a href="history.php?track_id='.$ID.'">History</a></td>
+  <td><a href="complete.php?track_id='.$ID.'">Complete</a></td>
 <td> 
 <select name="flist" form="fwd'.$i.'">';
 for($j=1;$j<=7;$j++){
@@ -333,7 +334,8 @@ $i=$i+1;
   <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
 <td>'.$timestamp2.'</td>
-<td><a href="history.php?track_id='.$ID.'">History</a></td>';
+<td><a href="history.php?track_id='.$ID.'">History</a></td>'
+<td><a href="complete.php?track_id='.$ID.'">Complete</a></td>;
 
 
 
