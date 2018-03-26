@@ -22,7 +22,7 @@ $people=[
 ];
 
 
-$timestamp=date('d-m-y | H:i');
+$timestamp=date('d-m-Y | H:i');
 
 $conn = new mysqli($servername, $username, $password, $db);
 
