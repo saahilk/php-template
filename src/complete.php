@@ -45,7 +45,7 @@ $people=[
 ];
 
 
-$track_no=$_GET['ID'];
+$track_no=$_GET['track_id'];
 $var1=9;
 
 $qry="SELECT * FROM document WHERE ID='$track_no' ";
