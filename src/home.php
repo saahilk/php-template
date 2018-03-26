@@ -49,7 +49,6 @@ $user_id=$_SESSION['user_id'];
 <html>
 	<head>
 		<meta name="google-signin-client_id" content="952937888060-b470t00um3s9uclet4qaua91ocvrjfus.apps.googleusercontent.com">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 		<script>
@@ -135,6 +134,9 @@ $user_id=$_SESSION['user_id'];
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<a href="#" onclick="signOut()"><b>Logout</b></a>
 				</li>
+				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
+					<a href="history.php"><b>History</b></a>
+				</li>
 		    
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<b>
@@ -198,9 +200,14 @@ echo $people[$_SESSION['user_id']]
 
 					
 					?>
+<<<<<<< HEAD
+					<div>
+					<h3 align="left">Pending documents</h3>
+=======
 					<div class="row">
 					<h2 align="center">Pending documents</h2>
 				</div>
+>>>>>>> fe1725aae2ff8b35c62d50d1c40d27373bb50b25
 					<br>
 				
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
