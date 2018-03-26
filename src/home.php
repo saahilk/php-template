@@ -345,20 +345,7 @@ $i=$i+1;
 					?>
 					<div>
 					</br>
-					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
-
-					<tr align="center" >
- 				 <th style="text-align: center;line-height: 25px;">S.no</th>
-				  <th style="text-align: center;line-height: 25px;">Tracking ID</th>
-				  <th style="text-align: center;line-height: 25px;">Received ON</th>
-				  <th style="text-align: center;line-height: 25px;">Remarks</th>
-				  <th style="text-align: center;line-height: 25px;">Submitted By</th>
-				  <th style="text-align: center;line-height: 25px;">Submitted On</th>
-				  <th style="text-align: center;line-height: 25px;">Forward</th>
-				  <th style="text-align: center;line-height: 25px;">Submit</th>
-  
-  
-					</tr>
+				
 
 
 					<?php
