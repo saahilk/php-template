@@ -253,11 +253,11 @@ echo $people[$_SESSION['user_id']]
   <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
 <td>'.$timestamp2.'</td>
-<td><a href='history.php ?track_id=$ID'>history</a></td>";
+<td><a href='history.php?track_id=$ID'>history</a></td>";
 
 echo"
-<td> 
-";
+<td> <select name='flist' form=",$i,"> " ;
+
 
 for($j=1;$j<=7;$j++){
 	if($j!=$location and $j!=$user_id)
