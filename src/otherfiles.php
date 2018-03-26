@@ -159,6 +159,8 @@ echo $people[$_SESSION['user_id']]
           
 <div>
 					</br>
+
+					<h2 align="center">All Documents</h2>
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
 					<tr align="center" >
  				 <th style="text-align: center;line-height: 25px;">S.No</th>
@@ -195,7 +197,7 @@ echo $people[$_SESSION['user_id']]
     $ID=$row_blog['ID'];
     $var=$row_blog['location'];
     $location=$people[$var];
-    $timestamp3=$row_blog['recieved_on'];
+    $timestamp1=$row_blog['recieved_on'];
     $remarks=$row_blog['remarks'];
     $submitted_by=$row_blog['submitted_by'];
     $timestamp2=$row_blog['submitted_on'];
