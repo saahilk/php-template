@@ -223,8 +223,8 @@ echo $people[$_SESSION['user_id']]
 				$i=1;
 
   
-  				
-  				$qry="SELECT * FROM document  order by timestamp desc";
+  				$user_id=$_SESSION['user_id'];
+  				$qry="SELECT * FROM document WHERE location='$user_id' order by timestamp desc";
   				$run_blog=mysqli_query($conn,$qry);
   while($row_blog=mysqli_fetch_array($run_blog))
   {
@@ -268,6 +268,67 @@ $i=$i+1;
 
 				</table>
 				</div>
+</br>
+</br>
+
+<div>
+					</br>
+					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
+
+					<tr align="center" >
+ 				  <th style="text-align: center;line-height: 25px;">S.no</th>
+				  <th style="text-align: center;line-height: 25px;">TRACKING ID</th>
+				  <th style="text-align: center;line-height: 25px;">STATUS</th>
+				  <th style="text-align: center;line-height: 25px;">DATE AND TIME</th>
+				  
+  
+  
+					</tr>
+
+
+					<?php
+
+
+
+
+ 
+
+				$i=1;
+
+  
+  				$user_id=$_SESSION['user_id'];
+  				$qry="SELECT * FROM document WHERE location<>'$user_id' order by timestamp desc";
+  				$run_blog=mysqli_query($conn,$qry);
+  while($row_blog=mysqli_fetch_array($run_blog))
+  {
+    $ID=$row_blog['ID'];
+    $timestamp=$row_blog['timestamp'];
+    $location=$row_blog['location'];
+    $var=$people[$location];
+    
+     echo '<tr align="center">
+  <td>'.$i.'</td>
+  
+  
+  <td>'.$ID.'</td>
+  <td>'.$var.'</td>
+  
+  
+<td>'.$timestamp.'</td>' ;
+
+
+
+
+$i=$i+1;
+
+  }
+
+  ?>
+
+
+				</table>
+				</div>
+
 
 
 					<?php
