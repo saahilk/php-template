@@ -13,6 +13,7 @@ if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
 $ID=mysqli_real_escape_string($conn,$POST['track_id']);
+echo $ID;
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   	$email_val = $_POST['user_email'];
   	
