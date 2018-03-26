@@ -205,8 +205,10 @@ echo $people[$_SESSION['user_id']]
 					<tr align="center" >
  				  <th style="text-align: center;line-height: 25px;">S.no</th>
 				  <th style="text-align: center;line-height: 25px;">TRACKING ID</th>
-				  <th style="text-align: center;line-height: 25px;">STATUS</th>
-				  <th style="text-align: center;line-height: 25px;">DATE AND TIME</th>
+				  <th style="text-align: center;line-height: 25px;">RECIEVED ON</th>
+				  <th style="text-align: center;line-height: 25px;">REMARKS</th>
+				  <th style="text-align: center;line-height: 25px;">SUBMITTED BY</th>
+				  <th style="text-align: center;line-height: 25px;">SUBMITTED ON</th>
 				  <th style="text-align: center;line-height: 25px;">Forward</th>
 				  <th style="text-align: center;line-height: 25px;">Submit</th>
   
@@ -230,19 +232,22 @@ echo $people[$_SESSION['user_id']]
   while($row_blog=mysqli_fetch_array($run_blog))
   {
     $ID=$row_blog['ID'];
-    $timestamp=$row_blog['timestamp'];
-    $location=$row_blog['location'];
-    $var=$people[$location];
+    $timestamp1=$row_blog['recieved_on'];
+    $remarks=$row_blog['remarks'];
+    $submitted_by=$row_blog['submitted_by'];
+    $timestamp2=$row_blog['submitted_on'];
+
+    
     
      echo '<tr align="center">
   <td>'.$i.'</td>
   
   
   <td>'.$ID.'</td>
-  <td>'.$var.'</td>
-  
-  
-<td>'.$timestamp.'</td>
+  <td>'.$timestamp1.'</td>
+  <td>'.$remarks.'</td>
+  <td>'.$submitted_by.'</td>
+<td>'.$timestamp2.'</td>
 <td> 
 <select name="flist" form="fwd'.$i.'">';
 for($j=1;$j<=7;$j++){
@@ -277,10 +282,12 @@ $i=$i+1;
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
 
 					<tr align="center" >
- 				  <th style="text-align: center;line-height: 25px;">S.no</th>
+ 				 <th style="text-align: center;line-height: 25px;">S.no</th>
 				  <th style="text-align: center;line-height: 25px;">TRACKING ID</th>
-				  <th style="text-align: center;line-height: 25px;">STATUS</th>
-				  <th style="text-align: center;line-height: 25px;">DATE AND TIME</th>
+				  <th style="text-align: center;line-height: 25px;">RECIEVED ON</th>
+				  <th style="text-align: center;line-height: 25px;">REMARKS</th>
+				  <th style="text-align: center;line-height: 25px;">SUBMITTED BY</th>
+				  <th style="text-align: center;line-height: 25px;">SUBMITTED ON</th>
 				  
   
   
@@ -303,19 +310,23 @@ $i=$i+1;
   while($row_blog=mysqli_fetch_array($run_blog))
   {
     $ID=$row_blog['ID'];
-    $timestamp=$row_blog['timestamp'];
-    $location=$row_blog['location'];
-    $var=$people[$location];
+    $var=$row_blog['location'];
+    $location=$people[$var];
+    $timestamp1=$row_blog['recieved_on'];
+    $remarks=$row_blog['remarks'];
+    $submitted_by=$row_blog['submitted_by'];
+    $timestamp2=$row_blog['submitted_on'];
     
      echo '<tr align="center">
   <td>'.$i.'</td>
   
   
   <td>'.$ID.'</td>
-  <td>'.$var.'</td>
-  
-  
-<td>'.$timestamp.'</td>' ;
+  <td>'.$location.'</td>
+  <td>'.$timestamp1.'</td>
+  <td>'.$remarks.'</td>
+  <td>'.$submitted_by.'</td>
+<td>'.$timestamp2.'</td>' ;
 
 
 
@@ -343,9 +354,12 @@ $i=$i+1;
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
 
 					<tr align="center" >
- 				  <th style="text-align: center;line-height: 25px;">S.no</th>
+ 				 <th style="text-align: center;line-height: 25px;">S.no</th>
 				  <th style="text-align: center;line-height: 25px;">TRACKING ID</th>
-				  <th style="text-align: center;line-height: 25px;">DATE AND TIME</th>
+				  <th style="text-align: center;line-height: 25px;">RECIEVED ON</th>
+				  <th style="text-align: center;line-height: 25px;">REMARKS</th>
+				  <th style="text-align: center;line-height: 25px;">SUBMITTED BY</th>
+				  <th style="text-align: center;line-height: 25px;">SUBMITTED ON</th>
 				  <th style="text-align: center;line-height: 25px;">Forward</th>
 				  <th style="text-align: center;line-height: 25px;">Submit</th>
   
@@ -369,14 +383,20 @@ $i=$i+1;
   while($row_blog=mysqli_fetch_array($run_blog))
   {
     $ID=$row_blog['ID'];
-    $timestamp=$row_blog['timestamp'];
+    $timestamp1=$row_blog['recieved_on'];
+    $remarks=$row_blog['remarks'];
+    $submitted_by=$row_blog['submitted_by'];
+    $timestamp2=$row_blog['submitted_on'];
 
  echo '<tr align="center">
   <td>'.$i.'</td>
   
   
   <td>'.$ID.'</td>
-<td>'.$timestamp.'</td>
+  <td>'.$timestamp1.'</td>
+  <td>'.$remarks.'</td>
+  <td>'.$submitted_by.'</td>
+<td>'.$timestamp2.'</td>
 <td> 
 <select name="flist" form="fwd'.$i.'">';
 for($j=1;$j<=7;$j++){
