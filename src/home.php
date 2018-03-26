@@ -227,7 +227,7 @@ echo $people[$_SESSION['user_id']]
 
   
   				$user_id=$_SESSION['user_id'];
-  				$qry="SELECT * FROM document WHERE location='$user_id' order by timestamp desc";
+  				$qry="SELECT * FROM document WHERE location='$user_id' order by recieved_on desc";
   				$run_blog=mysqli_query($conn,$qry);
   while($row_blog=mysqli_fetch_array($run_blog))
   {
@@ -305,7 +305,7 @@ $i=$i+1;
 
   
   				$user_id=$_SESSION['user_id'];
-  				$qry="SELECT * FROM document WHERE location<>'$user_id' order by timestamp desc";
+  				$qry="SELECT * FROM document WHERE location<>'$user_id' order by recieved_on desc";
   				$run_blog=mysqli_query($conn,$qry);
   while($row_blog=mysqli_fetch_array($run_blog))
   {
@@ -378,7 +378,7 @@ $i=$i+1;
 
   
   				
-  				$qry="SELECT * FROM document WHERE location='$user_id' order by timestamp desc";
+  				$qry="SELECT * FROM document WHERE location='$user_id' order by recieved_on desc";
   				$run_blog=mysqli_query($conn,$qry);
   while($row_blog=mysqli_fetch_array($run_blog))
   {
