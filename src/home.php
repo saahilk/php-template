@@ -212,6 +212,7 @@ echo $people[$_SESSION['user_id']]
 				  <th style="text-align: center;line-height: 25px;">Remarks</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted by</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted on</th>
+				  <th style="text-align: center;line-height: 25px;">History</th>		
 				  <th style="text-align: center;line-height: 25px;">Forward</th>
 				  <th style="text-align: center;line-height: 25px;">Submit</th>
   				  
@@ -257,7 +258,7 @@ echo $people[$_SESSION['user_id']]
 for($j=1;$j<=7;$j++){
 	if($j!=$location and $j!=$user_id)
 	{
-		echo '<option value='$j'>'.$people[$j].'</option>';
+		echo '<option value='$j'>$people[$j]</option>';
 	}
 }
 
