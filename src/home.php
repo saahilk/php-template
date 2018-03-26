@@ -134,6 +134,24 @@ $user_id=$_SESSION['user_id'];
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<a href="#" onclick="signOut()"><b>Logout</b></a>
 				</li>
+				<?php
+
+				if($_SESSION['user_id']=='1' or $_SESSION['user_id']=='2')
+				{
+					?>
+
+					<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
+					<a href="otherfiles.php" ><b>Other Documents</b></a>
+				</li>
+
+					<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
+					<a href="completelist.php" ><b>Completed List</b></a>
+				</li>
+					<?php
+
+				}
+
+				?>
 				
 		    
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
@@ -321,7 +339,7 @@ $i=$i+1;
     $ID=$row_blog['ID'];
     $var=$row_blog['location'];
     $location=$people[$var];
-    $timestamp1=$row_blog['recieved_on'];
+    $timestamp3=$row_blog['recieved_on'];
     $remarks=$row_blog['remarks'];
     $submitted_by=$row_blog['submitted_by'];
     $timestamp2=$row_blog['submitted_on'];
