@@ -177,7 +177,7 @@ echo $people[$_SESSION['user_id']]
     
     <tr>
     	 <td align="right">Remarks: </td>
-    	<td><input type="text" name="addresser" pattern="[A-Za-z ]" title="Only alphabets and space allowed" required></td>
+    	<td><input type="text" name="remarks" pattern="[A-Za-z ]" title="Only alphabets and space allowed" required></td>
     </tr>
     
     <tr align="center" style="font-size:1.5em;">

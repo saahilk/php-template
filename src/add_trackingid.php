@@ -12,6 +12,7 @@ $timestamp=date('Y-m-d H:i:s');
 $ID=$_POST['tracking_id'];
 $to=$_POST['addressee'];
 $from=$_POST['addresser'];
+$remarks=$_POST['remarks'];
 
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
@@ -22,7 +23,7 @@ $db = substr($url["path"], 1);
 $conn = new mysqli($servername, $username, $password, $db);
 
 
-$qry="insert into document(ID,location,timestamp) values ('$ID','1','$timestamp')";
+$qry="insert into document(ID,location,submitted_by,remarks) values ('$ID','$to',$from,'$remarks')";
 
 $insert_blo= mysqli_query($conn, $qry);
 
