@@ -214,10 +214,9 @@ echo $people[$_SESSION['user_id']]
 				  <th style="text-align: center;line-height: 25px;">Remarks</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted by</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted on</th>
-				   <th style="text-align: center;line-height: 25px;">History</th>
 				  <th style="text-align: center;line-height: 25px;">Forward</th>
 				  <th style="text-align: center;line-height: 25px;">Submit</th>
-  				 
+  				  
   
 					</tr>
 
@@ -245,7 +244,7 @@ echo $people[$_SESSION['user_id']]
 
     
     
-     echo "<tr align="center">
+     echo '<tr align="center">
   <td>'.$i.'</td>
   
   
@@ -254,8 +253,7 @@ echo $people[$_SESSION['user_id']]
   <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
 <td>'.$timestamp2.'</td>
-<td><a href='view.php?blog_id=$blog_id'>view</a></td>
-  
+
 <td> 
 <select name="flist" form="fwd'.$i.'">';
 for($j=1;$j<=7;$j++){
@@ -271,7 +269,7 @@ echo '</select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" 
 </form></td>
   
   
-</tr>";
+</tr>';
 
 $i=$i+1;
 
@@ -297,7 +295,7 @@ $i=$i+1;
 				  <th style="text-align: center;line-height: 25px;">Remarks</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted By</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted On</th>
-				  
+				  <th style="text-align: center;line-height: 25px;">History</th>
   
   
 					</tr>
@@ -326,7 +324,7 @@ $i=$i+1;
     $submitted_by=$row_blog['submitted_by'];
     $timestamp2=$row_blog['submitted_on'];
     
-     echo '<tr align="center">
+     echo "<tr align="center">
   <td>'.$i.'</td>
   
   
@@ -335,7 +333,9 @@ $i=$i+1;
   <td>'.$timestamp1.'</td>
   <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
-<td>'.$timestamp2.'</td>' ;
+<td>'.$timestamp2.'</td>
+<td><a href='history.php?track_id=$ID'>history</a></td>
+" ;
 
 
 
@@ -364,11 +364,11 @@ $i=$i+1;
 
 					<tr align="center" >
  				 <th style="text-align: center;line-height: 25px;">S.no</th>
-				  <th style="text-align: center;line-height: 25px;">TRACKING ID</th>
-				  <th style="text-align: center;line-height: 25px;">RECIEVED ON</th>
-				  <th style="text-align: center;line-height: 25px;">REMARKS</th>
-				  <th style="text-align: center;line-height: 25px;">SUBMITTED BY</th>
-				  <th style="text-align: center;line-height: 25px;">SUBMITTED ON</th>
+				  <th style="text-align: center;line-height: 25px;">Tracking ID</th>
+				  <th style="text-align: center;line-height: 25px;">Received ON</th>
+				  <th style="text-align: center;line-height: 25px;">Remarks</th>
+				  <th style="text-align: center;line-height: 25px;">Submitted By</th>
+				  <th style="text-align: center;line-height: 25px;">Submitted On</th>
 				  <th style="text-align: center;line-height: 25px;">Forward</th>
 				  <th style="text-align: center;line-height: 25px;">Submit</th>
   
