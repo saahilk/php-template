@@ -49,6 +49,7 @@ $user_id=$_SESSION['user_id'];
 <html>
 	<head>
 		<meta name="google-signin-client_id" content="952937888060-b470t00um3s9uclet4qaua91ocvrjfus.apps.googleusercontent.com">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 		<script>
@@ -147,6 +148,7 @@ echo $people[$_SESSION['user_id']]
 				</li>
 		    	</ul>
 		</div>
+	<div class="container">
 	<center>
 		<?php
 				if($_SESSION['user_id']=='0'){
@@ -197,7 +199,7 @@ echo $people[$_SESSION['user_id']]
 
 					
 					?>
-					<div>
+					<div class="row">
 					<h3 align="left">Pending documents</h3>
 					<br>
 				
@@ -431,6 +433,7 @@ $i=$i+1;
 				}
 			?>
 			</center>
+		</div>
 
 
 

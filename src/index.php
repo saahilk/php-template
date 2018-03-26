@@ -11,6 +11,7 @@ session_start();
 
 		<meta name="google-signin-client_id" content="952937888060-b470t00um3s9uclet4qaua91ocvrjfus.apps.googleusercontent.com">
 		<meta name="google-signin-hosted_domain" content="nitc.ac.in" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <?php
 
 if(isset($_SESSION["user_id"]) && $_SESSION["user_id"]!= ""){
