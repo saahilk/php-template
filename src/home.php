@@ -193,7 +193,7 @@ echo $people[$_SESSION['user_id']]
 <?php
 
 				}
-				elseif($_SESSION['user_id']=='1'){
+				elseif($_SESSION['user_id']=='1' or $_SESSION['user_id']=='2'){
 
 					
 					?>
