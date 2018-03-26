@@ -212,7 +212,7 @@ echo $people[$_SESSION['user_id']]
 				  <th style="text-align: center;line-height: 25px;">Remarks</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted by</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted on</th>
-				 	<th style="text-align: center;line-height: 25px;">History</th>
+				 	
 				  <th style="text-align: center;line-height: 25px;">Forward</th>
 				  <th style="text-align: center;line-height: 25px;">Submit</th>
   				  
@@ -243,8 +243,7 @@ echo $people[$_SESSION['user_id']]
 
     
     
-     echo "
-    <tr align='center'>
+    echo '<tr align="center">
   <td>'.$i.'</td>
   
   
@@ -253,12 +252,9 @@ echo $people[$_SESSION['user_id']]
   <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
 <td>'.$timestamp2.'</td>
-<td><a href='history.php?track_id=$ID'>history</a></td>";
 
-echo"
-<td> <select name='flist' form=",$i,"> " ;
-
-
+<td> 
+<select name="flist" form="fwd'.$i.'">';
 for($j=1;$j<=7;$j++){
 	if($j!=$location and $j!=$user_id)
 	{
@@ -266,11 +262,13 @@ for($j=1;$j<=7;$j++){
 	}
 }
 
-echo "</select></td><td><form action='forward.php' id=",$i," method='post' >
-	<input type='hidden' name='ID' value=",$ID,">
-	<input align='center' type='submit'>
+echo '</select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" >
+	<input type="hidden" name="ID" value="'.$ID.'">
+	<input align="center" type="submit">
 </form></td>
-  </tr>";
+  
+  
+</tr>';
 
 $i=$i+1;
 
