@@ -212,7 +212,7 @@ echo $people[$_SESSION['user_id']]
 				  <th style="text-align: center;line-height: 25px;">Remarks</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted by</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted on</th>
-				 	
+				  <th style="text-align: center;line-height: 25px;">History</th>
 				  <th style="text-align: center;line-height: 25px;">Forward</th>
 				  <th style="text-align: center;line-height: 25px;">Submit</th>
   				  
@@ -251,7 +251,8 @@ echo $people[$_SESSION['user_id']]
   <td>'.$timestamp1.'</td>
   <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
-<td>'.$timestamp2.'</td>
+  <td>'.$timestamp2.'</td>
+  <td> <form action="history.php" method ="post"><input type="hidden" name="track_id" value=", $ID ," ><input type="submit" value="History"></td>  
 
 <td> 
 <select name="flist" form="fwd'.$i.'">';
