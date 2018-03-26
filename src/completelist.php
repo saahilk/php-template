@@ -138,7 +138,7 @@ $user_id=$_SESSION['user_id'];
 					<a href="home.php" ><b>Home</b></a>
 				</li>
 				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="completelist.php" ><b>Completed Documents</b></a>
+					<a href="otherfiles.php" ><b>Other Documents</b></a>
 				</li>
 		    
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
@@ -159,20 +159,18 @@ echo $people[$_SESSION['user_id']]
           
 <div>
 					</br>
+					<h2 align="center">Completed Documents</h2>
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
+
 					<tr align="center" >
- 				 <th style="text-align: center;line-height: 25px;">S.No</th>
+ 				  <th style="text-align: center;line-height: 25px;">S.No</th>
 				  <th style="text-align: center;line-height: 25px;">Tracking ID</th>
-				  <th style="text-align: center;line-height: 25px;">Currently At</th>
-				  <th style="text-align: center;line-height: 25px;">Received ON</th>
+				  <th style="text-align: center;line-height: 25px;">Last Reviewed</th>
 				  <th style="text-align: center;line-height: 25px;">Remarks</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted By</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted On</th>
 				  <th style="text-align: center;line-height: 25px;">History</th>
-				  <th style="text-align: center;line-height: 25px;">Complete</th>
-  
-  
-					</tr>
+				  
   
   
 					</tr>
@@ -188,7 +186,7 @@ echo $people[$_SESSION['user_id']]
 				$temp=9;
   
   				$user_id=$_SESSION['user_id'];
-  				$qry="SELECT * FROM document WHERE location<>'$user_id' AND location<'$temp' order by recieved_on desc";
+  				$qry="SELECT * FROM document WHERE  location='$temp' order by recieved_on desc";
   				$run_blog=mysqli_query($conn,$qry);
   while($row_blog=mysqli_fetch_array($run_blog))
   {
@@ -206,12 +204,10 @@ echo $people[$_SESSION['user_id']]
   
   <td>'.$ID.'</td>
   <td>'.$location.'</td>
-  <td>'.$timestamp1.'</td>
   <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
 <td>'.$timestamp2.'</td>
-<td><a href="history.php?track_id='.$ID.'">History</a></td>
-<td><a href="complete.php?track_id='.$ID.'">Complete</a></td>';
+<td><a href="history.php?track_id='.$ID.'">History</a></td>';
 
 
 
