@@ -148,7 +148,6 @@ echo $people[$_SESSION['user_id']]
 				</li>
 		    	</ul>
 		</div>
-	<div class="container">
 	<center>
 		<?php
 				if($_SESSION['user_id']=='0'){
@@ -201,6 +200,7 @@ echo $people[$_SESSION['user_id']]
 					?>
 					<div class="row">
 					<h3 align="left">Pending documents</h3>
+				</div>
 					<br>
 				
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
@@ -433,7 +433,6 @@ $i=$i+1;
 				}
 			?>
 			</center>
-		</div>
 
 
 
