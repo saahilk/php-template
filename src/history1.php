@@ -180,6 +180,7 @@ if(isset($_POST['track_id']))
 
 				$i=1;
 				$ID=$_POST['track_id'];
+				echo $ID;
   				$user_id=$_SESSION['user_id'];
   				$qry="SELECT * FROM history WHERE ID='$ID' order by starttime asc";
   				$run_blog=mysqli_query($conn,$qry);
