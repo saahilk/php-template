@@ -12,7 +12,7 @@ $conn = new mysqli($servername, $username, $password, $db);
 if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
-
+$ID=mysqli_real_escape_string($conn,$POST['track_id']);
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   	$email_val = $_POST['user_email'];
   	
@@ -179,7 +179,7 @@ if(isset($_POST['track_id']))
  
 
 				$i=1;
-				$ID=$_POST['track_id'];
+				
 				echo $ID;
   				$user_id=$_SESSION['user_id'];
   				$qry="SELECT * FROM history WHERE ID='$ID' order by starttime asc";
