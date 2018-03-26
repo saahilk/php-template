@@ -159,8 +159,8 @@ echo $people[$_SESSION['user_id']]
     </tr>
 
 <tr>
-      <td align="right">Tracking Id: </td>
-      <td><input type="text"  name="tracking_id" maxlength="15" minlength="15"  pattern="[A-Za-z0-9]+"  value="" required></td>
+      <td align="right">Tracking Id:</td>
+      <td><input type="text"  name="tracking_id" maxlength="15" minlength="15"  pattern="[A-Za-z0-9]+" placeholder="15 alphanumeric characters" required></td>
     </tr>
     <tr>
     	 <td align="right">Submit to: </td>
@@ -172,12 +172,12 @@ echo $people[$_SESSION['user_id']]
     
     <tr>
     	 <td align="right">Submitted by: </td>
-    	<td><input type="text" name="addresser" pattern="[A-Za-z ]" required></td>
+    	<td><input type="text" name="addresser" pattern="[A-Za-z ]+" required></td>
     </tr>
     
     <tr>
     	 <td align="right">Remarks: </td>
-    	<td><input type="text" name="remarks" pattern="[A-Za-z ]" required></td>
+    	<td><input type="text" name="remarks" pattern="[A-Za-z ]+" required></td>
     </tr>
     
     <tr align="center" style="font-size:1.5em;">
