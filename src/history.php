@@ -151,9 +151,7 @@ $user_id=$_SESSION['user_id'];
 					<a href="home.php" ><b>Pending Documents</b></a>
 				</li>
 
-				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="add_trackingid_dean.php"><b>Add TrackingID</b></a>
-				</li>
+				
 
 		    
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
