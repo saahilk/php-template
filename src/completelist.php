@@ -165,7 +165,6 @@ echo $people[$_SESSION['user_id']]
 					<tr align="center" >
  				  <th style="text-align: center;line-height: 25px;">S.No</th>
 				  <th style="text-align: center;line-height: 25px;">Tracking ID</th>
-				  <th style="text-align: center;line-height: 25px;">Last Reviewed</th>
 				  <th style="text-align: center;line-height: 25px;">Remarks</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted By</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted On</th>
@@ -203,7 +202,6 @@ echo $people[$_SESSION['user_id']]
   
   
   <td>'.$ID.'</td>
-  <td>'.$location.'</td>
   <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
 <td>'.$timestamp2.'</td>
