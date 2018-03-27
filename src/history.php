@@ -189,7 +189,11 @@ if(isset($_GET['track_id']))
     $location=$row_blog['location'];
     $var=$people[$location];
     $timestamp1=$row_blog['starttime'];
+    $timestamp3= new DateTime($timestamp1);
+    $timestamp4=$timestamp3->format('d-m-Y | H:i');
     $timestamp2=$row_blog['endtime'];
+    $timestamp5= new DateTime($timestamp2);
+    $timestamp6=$timestamp5->format('d-m-Y | H:i');
     
     
      echo '<tr align="center">
@@ -197,10 +201,10 @@ if(isset($_GET['track_id']))
   
   
   <td>'.$var.'</td>
-  <td>'.$timestamp1.'</td>
+  <td>'.$timestamp4.'</td>
   
   
-<td>'.$timestamp2.'</td>
+<td>'.$timestamp6.'</td>
 
   
   

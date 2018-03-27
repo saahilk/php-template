@@ -261,6 +261,8 @@ echo $people[$_SESSION['user_id']]
     $remarks=$row_blog['remarks'];
     $submitted_by=$row_blog['submitted_by'];
     $timestamp2=$row_blog['submitted_on'];
+    $timestamp5= new DateTime($timestamp2);
+    $timestamp6=$timestamp5->format('d-m-Y | H:i');
 
     
     
@@ -272,7 +274,7 @@ echo $people[$_SESSION['user_id']]
   <td>'.$timestamp4.'</td>
   <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
-  <td>'.$timestamp2.'</td>
+  <td>'.$timestamp6.'</td>
   <td><a href="history.php?track_id='.$ID.'">History</a></td>
   <td><a href="complete.php?track_id='.$ID.'">Complete</a></td>
 <td> 
@@ -348,19 +350,23 @@ $i=$i+1;
   {
     $ID=$row_blog['ID'];
     $timestamp1=$row_blog['recieved_on'];
+    $timestamp3= new DateTime($timestamp1);
+    $timestamp4=$timestamp3->format('d-m-Y | H:i');
     $remarks=$row_blog['remarks'];
     $submitted_by=$row_blog['submitted_by'];
     $timestamp2=$row_blog['submitted_on'];
+    $timestamp5= new DateTime($timestamp2);
+    $timestamp6=$timestamp5->format('d-m-Y | H:i');
 
  echo '<tr align="center">
   <td>'.$i.'</td>
   
   
   <td>'.$ID.'</td>
-  <td>'.$timestamp1.'</td>
+  <td>'.$timestamp4.'</td>
   <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
-<td>'.$timestamp2.'</td>
+<td>'.$timestamp6.'</td>
 <td> 
 <select name="flist" form="fwd'.$i.'">';
 for($j=1;$j<=7;$j++){
