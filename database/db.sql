@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 27, 2018 at 02:23 AM
+-- Generation Time: Mar 27, 2018 at 11:13 PM
 -- Server version: 5.7.21-0ubuntu0.16.04.1
 -- PHP Version: 7.0.28-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `document` (
-  `ID` varchar(20) NOT NULL,
+  `ID` varchar(35) NOT NULL,
   `location` int(1) DEFAULT NULL,
   `submitted_on` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `submitted_by` varchar(90) DEFAULT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE `history` (
 
 CREATE TABLE `user` (
   `emailid` varchar(90) NOT NULL,
-  `flag` int(1) DEFAULT NULL
+  `flag` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -66,10 +66,14 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`emailid`, `flag`) VALUES
 ('aditi_b150063cs@nitc.ac.in', 7),
 ('ameersuhail_b150592cs@nitc.ac.in', 5),
+('devan_b150072cs@nitc.ac.in', 8),
 ('evareshma_b150129cs@nitc.ac.in', 4),
 ('geo_b150005cs@nitc.ac.in', 0),
 ('haziq_b150350cs@nitc.ac.in', 6),
+('kiran_b150020cs@nitc.ac.in', 9),
 ('maheshkumar_b150588cs@nitc.ac.in', 2),
+('reuben_b150042cs@nitc.ac.in', 10),
+('rohit_b150264cs@nitc.ac.in', 11),
 ('saahilsuhas_b150470cs@nitc.ac.in', 3),
 ('saiswaroop_b150376cs@nitc.ac.in', 1);
 
