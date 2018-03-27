@@ -182,7 +182,7 @@ echo $people[$_SESSION['user_id']]
  
 
 				$i=1;
-				$temp=9;
+				$temp=15;
   
   				$user_id=$_SESSION['user_id'];
   				$qry="SELECT * FROM document WHERE  location='$temp' order by recieved_on desc";

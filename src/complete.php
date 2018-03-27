@@ -19,6 +19,10 @@ $people=[
 	5=>"GA3",
 	6=>"GA4",
 	7=>"GA5",
+	8=>"GA6",
+	9=>"GA7",
+	10=>"GA8",
+	11=>"GA9",
 ];
 
 
@@ -33,20 +37,10 @@ if($_SESSION['user_id']=="") {
   	header('Location:index.php');
 }
 
-$people=[
-	0=>"Staff",
-	1=>"Dean",
-	2=>"DR",
-	3=>"GA1",
-	4=>"GA2",
-	5=>"GA3",
-	6=>"GA4",
-	7=>"GA5",
-];
 
 
 $track_no=$_GET['track_id'];
-$var1=9;
+$var1=15;
 
 $qry="SELECT * FROM document WHERE ID='$track_no' ";
 $run_blog=mysqli_query($conn,$qry);

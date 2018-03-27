@@ -19,6 +19,10 @@ $people=[
 	5=>"GA3",
 	6=>"GA4",
 	7=>"GA5",
+	8=>"GA6",
+	9=>"GA7",
+	10=>"GA8",
+	11=>"GA9",
 ];
 
 
@@ -33,19 +37,15 @@ if($_SESSION['user_id']=="") {
   	header('Location:index.php');
 }
 
-$people=[
-	0=>"Staff",
-	1=>"Dean",
-	2=>"DR",
-	3=>"GA1",
-	4=>"GA2",
-	5=>"GA3",
-	6=>"GA4",
-	7=>"GA5",
-];
 
 $flag=$_POST['flist'];
 $track_no=$_POST['ID'];
+
+if($flag==15)
+{
+	$loc='complete.php?track_id='.$track_no;
+	header('Location:'.$loc);
+}
 
 $qry="SELECT * FROM document WHERE ID='$track_no' ";
 $run_blog=mysqli_query($conn,$qry);
