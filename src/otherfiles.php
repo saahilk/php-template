@@ -197,7 +197,7 @@ echo $people[$_SESSION['user_id']]
  
 
 				$i=1;
-				$temp=9;
+				$temp=12;
   
   				$user_id=$_SESSION['user_id'];
   				$qry="SELECT * FROM document WHERE location<>'$user_id' AND location<'$temp' order by recieved_on desc";
