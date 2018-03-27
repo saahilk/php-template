@@ -171,7 +171,6 @@ echo $people[$_SESSION['user_id']]
 				  <th style="text-align: center;line-height: 25px;">Submitted By</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted On</th>
 				  <th style="text-align: center;line-height: 25px;">History</th>
-				  <th style="text-align: center;line-height: 25px;">Complete</th>
   
   
 					</tr>
@@ -212,8 +211,7 @@ echo $people[$_SESSION['user_id']]
   <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
 <td>'.$timestamp2.'</td>
-<td><a href="history.php?track_id='.$ID.'">History</a></td>
-<td><a href="complete.php?track_id='.$ID.'">Complete</a></td>';
+<td><a href="history.php?track_id='.$ID.'">History</a></td>';
 
 
 
