@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 27, 2018 at 11:13 PM
+-- Generation Time: Mar 28, 2018 at 12:21 AM
 -- Server version: 5.7.21-0ubuntu0.16.04.1
 -- PHP Version: 7.0.28-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `document` (
   `ID` varchar(35) NOT NULL,
-  `location` int(1) DEFAULT NULL,
+  `location` int(2) DEFAULT NULL,
   `submitted_on` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `submitted_by` varchar(90) DEFAULT NULL,
   `remarks` varchar(2000) DEFAULT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `document` (
 
 CREATE TABLE `history` (
   `ID` varchar(20) NOT NULL,
-  `location` int(1) NOT NULL,
+  `location` int(2) NOT NULL,
   `starttime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `endtime` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
