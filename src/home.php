@@ -145,7 +145,7 @@ $user_id=$_SESSION['user_id'];
 				{
 					?>
 					<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="add_trackingid_dean.php" ><b>Submit Form</b></a>
+					<a href="add_trackingid_dean.php"><b>Submit Form</b></a>
 				</li>
 
 					<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
