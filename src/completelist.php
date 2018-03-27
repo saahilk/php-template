@@ -138,12 +138,19 @@ $user_id=$_SESSION['user_id'];
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<a href="#" onclick="signOut()"><b>Logout</b></a>
 				</li>
-				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="home.php" ><b>Home</b></a>
-				</li>
+				
 				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<a href="otherfiles.php" ><b>Other Documents</b></a>
 				</li>
+
+				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
+					<a href="home.php" ><b>Pending Documents</b></a>
+				</li>
+
+				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
+					<a href="#"><b>Add TrackingID</b></a>
+				</li>
+
 		    
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<b>

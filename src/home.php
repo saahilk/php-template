@@ -144,17 +144,23 @@ $user_id=$_SESSION['user_id'];
 				if($_SESSION['user_id']=='1' or $_SESSION['user_id']=='2')
 				{
 					?>
-					<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="add_trackingid_dean.php"><b>Submit Form</b></a>
-				</li>
+					
+					
 
 					<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
+					<a href="completelist.php" ><b>Completed Documents</b></a>
+				</li>
+
+				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<a href="otherfiles.php" ><b>Other Documents</b></a>
 				</li>
 
-					<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="completelist.php" ><b>Completed List</b></a>
+				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
+					<a href="#"><b>Add TrackingID</b></a>
 				</li>
+
+
+
 					<?php
 
 				}
