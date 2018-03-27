@@ -144,6 +144,9 @@ $user_id=$_SESSION['user_id'];
 				if($_SESSION['user_id']=='1' or $_SESSION['user_id']=='2')
 				{
 					?>
+					<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
+					<a href="#" ><b>Submit Form</b></a>
+				</li>
 
 					<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<a href="otherfiles.php" ><b>Other Documents</b></a>
