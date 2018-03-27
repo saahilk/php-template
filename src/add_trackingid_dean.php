@@ -31,7 +31,7 @@ if($_SESSION['user_id']=="") {
 }
 
 $people=[
-	0=>"Staff",
+		0=>"Staff",
 	1=>"Dean",
 	2=>"DR",
 	3=>"GA1",
@@ -158,83 +158,9 @@ echo $people[$_SESSION['user_id']]
 		    	</ul>
 		</div>
 	<center>
-  
-          
-          
-<div>
-					</br>
-
-					<h2 align="center">All Documents</h2>
-					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
-					<tr align="center" >
- 				 <th style="text-align: center;line-height: 25px;">S.No</th>
-				  <th style="text-align: center;line-height: 25px;">Tracking ID</th>
-				  <th style="text-align: center;line-height: 25px;">Currently At</th>
-				  <th style="text-align: center;line-height: 25px;">Received ON</th>
-				  <th style="text-align: center;line-height: 25px;">Remarks</th>
-				  <th style="text-align: center;line-height: 25px;">Submitted By</th>
-				  <th style="text-align: center;line-height: 25px;">Submitted On</th>
-				  <th style="text-align: center;line-height: 25px;">History</th>
-  
-  
-					</tr>
-  
-  
-					</tr>
-
-<?php
-
-
-
-
- 
-
-				$i=1;
-				$temp=9;
-  
-  				$user_id=$_SESSION['user_id'];
-  				$qry="SELECT * FROM document WHERE location<>'$user_id' AND location<'$temp' order by recieved_on desc";
-  				$run_blog=mysqli_query($conn,$qry);
-  while($row_blog=mysqli_fetch_array($run_blog))
-  {
-    $ID=$row_blog['ID'];
-    $var=$row_blog['location'];
-    $location=$people[$var];
-    $timestamp1=$row_blog['recieved_on'];
-    $timestamp3= new DateTime($timestamp1);
-    $timestamp4=$timestamp3->format('d-m-Y | H:i');
-    $remarks=$row_blog['remarks'];
-    $submitted_by=$row_blog['submitted_by'];
-    $timestamp2=$row_blog['submitted_on'];
-    $timestamp5= new DateTime($timestamp2);
-    $timestamp6=$timestamp5->format('d-m-Y | H:i');
-    
-     echo '<tr align="center">
-  <td>'.$i.'</td>
-  
-  
-  <td>'.$ID.'</td>
-  <td>'.$location.'</td>
-  <td>'.$timestamp4.'</td>
-  <td>'.$remarks.'</td>
-  <td>'.$submitted_by.'</td>
-<td>'.$timestamp6.'</td>
-<td><a href="history.php?track_id='.$ID.'">History</a></td>';
-
-
-
-
-$i=$i+1;
-
-  }
-
-  ?>
-
-
-				</table>
-				</div>
-        
-			
+  <div>
+  	
+  </div>		
 			</center>
 
 
