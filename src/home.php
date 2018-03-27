@@ -256,9 +256,8 @@ echo $people[$_SESSION['user_id']]
   {
     $ID=$row_blog['ID'];
     $timestamp1=$row_blog['recieved_on'];
-    $timestamp3= new datetime();
-    $timestamp3=strtotime($timestamp1);
-    echo $timestamp3->format('d-m-Y | H:i');
+    $timestamp3= new DateTime($timestamp1);
+    $timestamp4=$timestamp3->format('d-m-Y | H:i');
     $remarks=$row_blog['remarks'];
     $submitted_by=$row_blog['submitted_by'];
     $timestamp2=$row_blog['submitted_on'];
@@ -270,7 +269,7 @@ echo $people[$_SESSION['user_id']]
   
   
   <td>'.$ID.'</td>
-  <td>'.$timestamp1.'</td>
+  <td>'.$timestamp4.'</td>
   <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
   <td>'.$timestamp2.'</td>
