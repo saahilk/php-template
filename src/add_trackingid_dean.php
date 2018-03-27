@@ -30,8 +30,9 @@ if($_SESSION['user_id']=="") {
   	header('Location:index.php');
 }
 
+
 $people=[
-		0=>"Staff",
+	0=>"Staff",
 	1=>"Dean",
 	2=>"DR",
 	3=>"GA1",
@@ -138,12 +139,25 @@ $user_id=$_SESSION['user_id'];
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<a href="#" onclick="signOut()"><b>Logout</b></a>
 				</li>
-				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="home.php" ><b>Home</b></a>
-				</li>
-				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
+				
+					
+					
+
+					<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<a href="completelist.php" ><b>Completed Documents</b></a>
 				</li>
+
+				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
+					<a href="otherfiles.php" ><b>Other Documents</b></a>
+				</li>
+
+				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
+					<a href="home.php"><b>Pending Documents</b></a>
+				</li>
+
+
+
+				
 		    
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<b>
@@ -158,9 +172,61 @@ echo $people[$_SESSION['user_id']]
 		    	</ul>
 		</div>
 	<center>
-  <div>
-  	
-  </div>		
+		
+				</br>
+					<form action="add_trackingid.php" method="post" enctype="multipart/form-data">
+  <table align="center" width="600" height="400" border="1" bgcolor="skyblue" style="background-color: #DDDDDD">
+    <tr align="center">
+      <td colspan="5"><h1 style="text-align:center">ADD A NEW TRACKING NUMBER</h1></td>
+    </tr>
+
+<tr>
+      <td align="right">Tracking Id:</td>
+      <td><input type="text" name="tracking_id" maxlength="15" minlength="15"  pattern="[A-Za-z0-9]+" placeholder="15 alphanumeric characters" required></td>
+    </tr>
+    <tr>
+    	 <td align="right">Submit to: </td>
+    	<td><select name="addressee" required>
+    		<option value="1">Dean</option>
+    		<option value="2">DR</option>
+    		<option value="3">GA1</option>
+    		<option value="4">GA2</option>
+    		<option value="5">GA3</option>
+    		<option value="6">GA4</option>
+    		<option value="7">GA5</option>
+    		<option value="8">GA6</option>
+    		<option value="9">GA7</option>
+    		<option value="10">GA8</option>
+    		<option value="11">GA9</option>
+    	</select></td>
+    </tr>
+    
+    
+    
+    <tr>
+    	 <td align="right">Remarks: </td>
+    	<td><input type="text" name="remarks" pattern="[A-Za-z ]+" required></td>
+    </tr>
+    
+    <tr align="center" style="font-size:1.5em;">
+      <td colspan="5"><input type="submit" name="insert_post" value="Submit"/></td>
+    </tr>
+
+
+
+
+  </table>
+</form>
+
+
+
+
+
+				</table>
+				</div>
+
+
+		
 			</center>
 
 

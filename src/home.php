@@ -156,7 +156,7 @@ $user_id=$_SESSION['user_id'];
 				</li>
 
 				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="#"><b>Add TrackingID</b></a>
+					<a href="add_trackingid_dean.php"><b>Add TrackingID</b></a>
 				</li>
 
 

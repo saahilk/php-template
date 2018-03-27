@@ -39,6 +39,10 @@ $people=[
 	5=>"GA3",
 	6=>"GA4",
 	7=>"GA5",
+	8=>"GA6",
+	9=>"GA7",
+	10=>"GA8",
+	11=>"GA9",
 ];
 
 $user_id=$_SESSION['user_id'];
@@ -134,9 +138,23 @@ $user_id=$_SESSION['user_id'];
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<a href="#" onclick="signOut()"><b>Logout</b></a>
 				</li>
+
 				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="home.php" ><b>Home</b></a>
+					<a href="completelist.php" ><b>Completed Documents</b></a>
 				</li>
+				
+				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
+					<a href="otherfiles.php" ><b>Other Documents</b></a>
+				</li>
+
+				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
+					<a href="home.php" ><b>Pending Documents</b></a>
+				</li>
+
+				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
+					<a href="add_trackingid_dean.php"><b>Add TrackingID</b></a>
+				</li>
+
 		    
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<b>

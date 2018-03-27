@@ -40,6 +40,10 @@ $people=[
 	5=>"GA3",
 	6=>"GA4",
 	7=>"GA5",
+	8=>"GA6",
+	9=>"GA7",
+	10=>"GA8",
+	11=>"GA9",
 ];
 
 $user_id=$_SESSION['user_id'];
