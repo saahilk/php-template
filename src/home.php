@@ -326,6 +326,7 @@ $i=$i+1;
 				  <th style="text-align: center;line-height: 25px;">Remarks</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted By</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted On</th>
+				  <th style="text-align: center;line-height: 25px;">History</th>
 				  <th style="text-align: center;line-height: 25px;">Forward</th>
 				  <th style="text-align: center;line-height: 25px;">Submit</th>
   
@@ -367,6 +368,7 @@ $i=$i+1;
   <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
 <td>'.$timestamp6.'</td>
+<td><a href="history.php?track_id='.$ID.'">History</a></td>
 <td> 
 <select name="flist" form="fwd'.$i.'">';
 for($j=1;$j<=7;$j++){
