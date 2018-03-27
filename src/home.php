@@ -291,7 +291,7 @@ echo $people[$_SESSION['user_id']]
   <td><a href="history.php?track_id='.$ID.'">History</a></td>
 <td> 
 <select name="flist" form="fwd'.$i.'">';
-for($j=1;$j<=7;$j++){
+for($j=1;$j<=11;$j++){
 	if($j!=$location and $j!=$user_id)
 	{
 		echo '<option align="center" value="'.$j.'">'.$people[$j].'</option>';
@@ -383,7 +383,7 @@ $i=$i+1;
 <td><a href="history.php?track_id='.$ID.'">History</a></td>
 <td> 
 <select name="flist" form="fwd'.$i.'">';
-for($j=1;$j<=7;$j++){
+for($j=1;$j<=11;$j++){
 	if($j!=$user_id)
 	{
 		echo '<option value="'.$j.'">'.$people[$j].'</option>';
