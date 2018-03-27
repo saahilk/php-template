@@ -262,7 +262,7 @@ echo $people[$_SESSION['user_id']]
     $timestamp2=$row_blog['submitted_on'];
     $timestamp5= new DateTime($timestamp2);
     $timestamp6=$timestamp5->format('d-m-Y | H:i');
-
+    $var1=15;
     
     
     echo '<tr align="center">
@@ -284,7 +284,7 @@ for($j=1;$j<=7;$j++){
 	}
 }
 
-echo '<option value="'.15.'">Completed</option></select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" >
+echo '<option value="'.$var1.'">Completed</option></select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" >
 	<input type="hidden" name="ID" value="'.$ID.'">
 	<input align="center" type="submit">
 </form></td>
