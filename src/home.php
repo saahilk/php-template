@@ -30,6 +30,7 @@ if($_SESSION['user_id']=="") {
   	header('Location:index.php');
 }
 
+
 $people=[
 	0=>"Staff",
 	1=>"Dean",
@@ -39,6 +40,10 @@ $people=[
 	5=>"GA3",
 	6=>"GA4",
 	7=>"GA5",
+	8=>"GA6",
+	9=>"GA7",
+	10=>"GA8",
+	11=>"GA9",
 ];
 
 $user_id=$_SESSION['user_id'];
@@ -280,11 +285,11 @@ echo $people[$_SESSION['user_id']]
 for($j=1;$j<=7;$j++){
 	if($j!=$location and $j!=$user_id)
 	{
-		echo '<option value="'.$j.'">'.$people[$j].'</option>';
+		echo '<option align="center" value="'.$j.'">'.$people[$j].'</option>';
 	}
 }
 
-echo '<option value="'.$var1.'">Completed</option></select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" >
+echo '<option align="center" value="'.$var1.'">Completed</option></select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" >
 	<input type="hidden" name="ID" value="'.$ID.'">
 	<input align="center" type="submit">
 </form></td>
