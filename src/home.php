@@ -256,6 +256,7 @@ echo $people[$_SESSION['user_id']]
   {
     $ID=$row_blog['ID'];
     $timestamp1=$row_blog['recieved_on'];
+    $timestamp3= new datetime();
     $timestamp3=strtotime($timestamp1);
     echo $timestamp3->format('d-m-Y | H:i');
     $remarks=$row_blog['remarks'];
