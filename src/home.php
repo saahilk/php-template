@@ -193,7 +193,7 @@ echo $people[$_SESSION['user_id']]
 
 <tr>
       <td align="right">Tracking Id:</td>
-      <td><input type="text" name="tracking_id" maxlength="15" minlength="15"  pattern="[A-Za-z0-9]+" placeholder="15 alphanumeric characters" required></td>
+      <td><input type="text" name="tracking_id" maxlength="30" minlength="5"  pattern="[A-Za-z0-9~!@#$%^&*()_-+/.,<>\:;'"]+" placeholder="tracking id" required></td>
     </tr>
     <tr>
     	 <td align="right">Submit to: </td>
