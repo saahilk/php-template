@@ -40,6 +40,7 @@ if($_SESSION['user_id']=="") {
 
 $flag=$_POST['flist'];
 $track_no=$_POST['ID'];
+$remarks=$_POST['remarks'];
 
 if($flag==15)
 {
@@ -64,7 +65,7 @@ $insert_blo= mysqli_query($conn, $qry);
 
 
 
-$qry1='UPDATE document SET location="'.$flag.'",recieved_on="'.$timestamp.'" WHERE ID="'.$track_no.'"';
+$qry1='UPDATE document SET remarks="'.$remarks.'",location="'.$flag.'",recieved_on="'.$timestamp.'" WHERE ID="'.$track_no.'"';
 if($insert_blo&&$conn->query($qry1)==TRUE)
 {
     header('Location:home.php');
