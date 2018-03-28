@@ -339,7 +339,7 @@ echo $people[$_SESSION['user_id']]
   
   <td>'.$ID.'</td>
   <td>'.$timestamp4.'</td>
-  <td><input type="text"  name="remarks" value="'.$remarks.'" /></td>
+  <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
   <td>'.$timestamp6.'</td>
 
