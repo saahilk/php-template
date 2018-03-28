@@ -212,7 +212,7 @@ echo $people[$_SESSION['user_id']]
 				</br>
 				</br>
 
-				<form align="right" class="example" action="search_pending.php" style="margin:auto;max-width:300px">
+				<form align="right" class="example" action="search_otherfiles.php" style="margin:auto;max-width:300px">
   						<input type="text" placeholder="Search.." name="search">
   						<button type="submit"><i class="fa fa-search"></i></button>
 					</form>

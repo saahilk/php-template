@@ -164,7 +164,6 @@ $user_id=$_SESSION['user_id'];
 		</style>
 	</head>
 
-
 	<body style="padding:0;margin:0;font-family: arial, sans-serif;">
 		  <div class="navBar">
 		  	<ul class="navItemList">
@@ -178,7 +177,7 @@ $user_id=$_SESSION['user_id'];
 				</li>
 				
 				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="otherfiles.php" ><b>Other Documents</b></a>
+					<a href="completelist.php" ><b>Completed Documents</b></a>
 				</li>
 
 				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
@@ -203,16 +202,21 @@ echo $people[$_SESSION['user_id']]
 		    	</ul>
 		</div>
 	<center>
-  
+  <?php
+
+if(isset($_GET['search']))
+{
+	?>
           
           
 <div>
 					</br>
-					<h2 align="center">Completed Documents</h2>
-					</br>
+
+					<h2 align="center">All Documents</h2>
+				</br>
 				</br>
 
-					<form align="right" class="example" action="search_complete.php" style="margin:auto;max-width:300px">
+				<form align="right" class="example" action="search_otherfiles.php" style="margin:auto;max-width:300px">
   						<input type="text" placeholder="Search.." name="search">
   						<button type="submit"><i class="fa fa-search"></i></button>
 					</form>
@@ -222,15 +226,18 @@ echo $people[$_SESSION['user_id']]
 				</br>
 
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
-
 					<tr align="center" >
- 				  <th style="text-align: center;line-height: 25px;">S.No</th>
+ 				 <th style="text-align: center;line-height: 25px;">S.No</th>
 				  <th style="text-align: center;line-height: 25px;">Tracking ID</th>
+				  <th style="text-align: center;line-height: 25px;">Currently At</th>
+				  <th style="text-align: center;line-height: 25px;">Received ON</th>
 				  <th style="text-align: center;line-height: 25px;">Remarks</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted By</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted On</th>
 				  <th style="text-align: center;line-height: 25px;">History</th>
-				  
+  
+  
+					</tr>
   
   
 					</tr>
@@ -243,31 +250,35 @@ echo $people[$_SESSION['user_id']]
  
 
 				$i=1;
-				$temp=15;
-  
+				$temp=12;
+  				$text=$_GET['search'];
   				$user_id=$_SESSION['user_id'];
-  				$qry="SELECT * FROM document WHERE  location='$temp' order by recieved_on desc";
+  				$qry="SELECT * FROM document WHERE ( `ID` LIKE '%$text%' OR  `remarks` LIKE '%$text%' OR `submitted_by` LIKE '%$text%' ) AND ( location<>'$user_id' AND location<'$temp') order by recieved_on desc";
   				$run_blog=mysqli_query($conn,$qry);
   while($row_blog=mysqli_fetch_array($run_blog))
   {
     $ID=$row_blog['ID'];
     $var=$row_blog['location'];
     $location=$people[$var];
-    $timestamp3=$row_blog['recieved_on'];
+    $timestamp1=$row_blog['recieved_on'];
+    $timestamp3= new DateTime($timestamp1);
+    $timestamp4=$timestamp3->format('d-m-Y | H:i');
     $remarks=$row_blog['remarks'];
     $submitted_by=$row_blog['submitted_by'];
     $timestamp2=$row_blog['submitted_on'];
-    $timestamp3= new DateTime($timestamp2);
-    $timestamp4=$timestamp3->format('d-m-Y | H:i');
+    $timestamp5= new DateTime($timestamp2);
+    $timestamp6=$timestamp5->format('d-m-Y | H:i');
     
      echo '<tr align="center">
   <td>'.$i.'</td>
   
   
   <td>'.$ID.'</td>
+  <td>'.$location.'</td>
+  <td>'.$timestamp4.'</td>
   <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
-<td>'.$timestamp4.'</td>
+<td>'.$timestamp6.'</td>
 <td><a href="history.php?track_id='.$ID.'">History</a></td>';
 
 
@@ -282,7 +293,16 @@ $i=$i+1;
 
 				</table>
 				</div>
-        
+        <?php
+
+}
+?>
+
+</br>
+</br>
+</br>
+</br>
+<a style= "align-content: center" href="otherfiles.php">Link To All Other Documents</a>
 			
 			</center>
 
