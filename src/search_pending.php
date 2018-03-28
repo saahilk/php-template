@@ -229,7 +229,8 @@ if(isset($_GET['search']))
 		<div>
 					<h2 align="center">Pending documents</h2>
 					<br>
-				
+				</br>
+				</br>
 
 					<form align="right" class="example" action="search_pending.php" style="margin:auto;max-width:300px">
   						<input type="text" placeholder="Search.." name="search">
