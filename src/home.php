@@ -278,8 +278,8 @@ echo $people[$_SESSION['user_id']]
 					<br>
 				
 
-					<form align="right" class="example" action="#" style="margin:auto;max-width:300px">
-  						<input type="text" placeholder="Search.." name="search2">
+					<form align="right" class="example" action="search_pending.php" style="margin:auto;max-width:300px">
+  						<input type="text" placeholder="Search.." name="search">
   						<button type="submit"><i class="fa fa-search"></i></button>
 					</form>
 
@@ -386,8 +386,8 @@ $i=$i+1;
 					</br>
 					</br>
 
-					<form align="right" class="example" action="#" style="margin:auto;max-width:300px">
-  						<input type="text" placeholder="Search.." name="search2">
+					<form align="right" class="example" action="search_pending.php" style="margin:auto;max-width:300px">
+  						<input type="text" placeholder="Search.." name="search">
   						<button type="submit"><i class="fa fa-search"></i></button>
 					</form>
 
@@ -395,7 +395,7 @@ $i=$i+1;
 					</br>
 					</br>
 					</br>
-					
+
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
 
 					<tr align="center" >
