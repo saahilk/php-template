@@ -288,7 +288,7 @@ echo $people[$_SESSION['user_id']]
 				</br>
 
 
-					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
+					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1200"  border="5" >
 
 					<tr align="center" >
  				  <th style="text-align: center;line-height: 25px;">S.no</th>
@@ -338,9 +338,10 @@ echo $people[$_SESSION['user_id']]
   
   <td>'.$ID.'</td>
   <td>'.$timestamp4.'</td>
-  <td>'.$remarks.'</td>
+  <td><input type="text"  name="blog_title" value="<?php echo $remarks;?>" /></td>
   <td>'.$submitted_by.'</td>
   <td>'.$timestamp6.'</td>
+  
   <td><a href="history.php?track_id='.$ID.'">History</a></td>
 <td> 
 <select name="flist" form="fwd'.$i.'">';
