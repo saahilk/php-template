@@ -219,10 +219,6 @@ echo $people[$_SESSION['user_id']]
 	<center>
 
 
-		<form class="example" action="#" style="margin:auto;max-width:300px">
-  <input type="text" placeholder="Search.." name="search2">
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
 
 
 		<?php
@@ -279,6 +275,13 @@ echo $people[$_SESSION['user_id']]
 					<h2 align="center">Pending documents</h2>
 					<br>
 				
+
+					<form align="right" class="example" action="#" style="margin:auto;max-width:300px">
+  						<input type="text" placeholder="Search.." name="search2">
+  						<button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+
+
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
 
 					<tr align="center" >
@@ -372,6 +375,16 @@ $i=$i+1;
 					$user_id=$_SESSION['user_id'];
 					?>
 					<div>
+
+					<h2 align="center">Pending documents</h2>
+					</br>
+					</br>
+
+					<form align="right" class="example" action="#" style="margin:auto;max-width:300px">
+  						<input type="text" placeholder="Search.." name="search2">
+  						<button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+
 					</br>
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
 
