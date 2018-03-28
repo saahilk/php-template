@@ -177,18 +177,33 @@ $user_id=$_SESSION['user_id'];
 					<a href="#" onclick="signOut()"><b>Logout</b></a>
 				</li>
 
-				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
+				<?php
+
+				if($_SESSION['user_id']=='1' or $_SESSION['user_id']=='2')
+				{
+					?>
+					
+					
+
+					<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<a href="completelist.php" ><b>Completed Documents</b></a>
 				</li>
-				
+
 				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<a href="otherfiles.php" ><b>Other Documents</b></a>
 				</li>
 
 				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="home.php" ><b>Pending Documents</b></a>
+					<a href="add_trackingid_dean.php"><b>Add TrackingID</b></a>
 				</li>
 
+
+
+					<?php
+
+				}
+
+				?>
 				
 
 		    
@@ -314,6 +329,12 @@ $i=$i+1;
 
 }
 ?>
+
+</br>
+</br>
+</br>
+</br>
+<a style= "align-content: center" href="home.php">Link To Home Page</a>
 
 			</center>
 
