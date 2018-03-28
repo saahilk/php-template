@@ -298,6 +298,7 @@ echo $people[$_SESSION['user_id']]
 				  <th style="text-align: center;line-height: 25px;">Submitted by</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted on</th>
 				  <th style="text-align: center;line-height: 25px;">History</th>
+				  <th style="text-align: center;line-height: 25px;">Edit Remarks</th>
 				  <th style="text-align: center;line-height: 25px;">Forward</th>
 				  <th style="text-align: center;line-height: 25px;">Submit</th>
   				  
@@ -343,6 +344,7 @@ echo $people[$_SESSION['user_id']]
   <td>'.$timestamp6.'</td>
 
   <td><a href="history.php?track_id='.$ID.'">History</a></td>
+  <td><a href="edit.php?track_id='.$ID.'">Edit</a></td>
 <td> 
 <select name="flist" form="fwd'.$i.'">';
 for($j=1;$j<=11;$j++){
@@ -407,6 +409,7 @@ $i=$i+1;
 				  <th style="text-align: center;line-height: 25px;">Submitted By</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted On</th>
 				  <th style="text-align: center;line-height: 25px;">History</th>
+				  <th style="text-align: center;line-height: 25px;">Edit Remarks</th>
 				  <th style="text-align: center;line-height: 25px;">Forward</th>
 				  <th style="text-align: center;line-height: 25px;">Submit</th>
   
@@ -449,6 +452,7 @@ $i=$i+1;
   <td>'.$submitted_by.'</td>
 <td>'.$timestamp6.'</td>
 <td><a href="history.php?track_id='.$ID.'">History</a></td>
+<td><a href="edit.php?track_id='.$ID.'">Edit</a></td>
 <td> 
 <select name="flist" form="fwd'.$i.'">';
 for($j=1;$j<=11;$j++){
