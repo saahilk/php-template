@@ -174,15 +174,33 @@ if(isset($_GET['search']))
 	?>
 		
 		<div>
-					</br>
+					<h2 align="center">Pending documents</h2>
+					<br>
+				
+
+					<form align="right" class="example" action="search_pending.php" style="margin:auto;max-width:300px">
+  						<input type="text" placeholder="Search.." name="search">
+  						<button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+
+				</br>
+				</br>
+				</br>
+
+
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
 
 					<tr align="center" >
  				  <th style="text-align: center;line-height: 25px;">S.no</th>
-				  <th style="text-align: center;line-height: 25px;">Room</th>
-				  <th style="text-align: center;line-height: 25px;">Entry Time</th>
-				   <th style="text-align: center;line-height: 25px;">Exit Time</th>
-  
+				  <th style="text-align: center;line-height: 25px;">Tracking ID</th>
+				  <th style="text-align: center;line-height: 25px;">Recieved on</th>
+				  <th style="text-align: center;line-height: 25px;">Remarks</th>
+				  <th style="text-align: center;line-height: 25px;">Submitted by</th>
+				  <th style="text-align: center;line-height: 25px;">Submitted on</th>
+				  <th style="text-align: center;line-height: 25px;">History</th>
+				  <th style="text-align: center;line-height: 25px;">Forward</th>
+				  <th style="text-align: center;line-height: 25px;">Submit</th>
+  				  
   
 					</tr>
 
@@ -195,33 +213,48 @@ if(isset($_GET['search']))
  
 
 				$i=1;
-				$ID=$_GET['track_id'];
+				$text=$_GET['search'];
+  
   				$user_id=$_SESSION['user_id'];
-  				$qry="SELECT * FROM history WHERE ID='$ID' order by starttime asc";
+  				$qry="SELECT * FROM document WHERE (`title` LIKE '%$text%') OR (`text` LIKE '%$text%') AND(location='$user_id') order by recieved_on desc";
   				$run_blog=mysqli_query($conn,$qry);
   while($row_blog=mysqli_fetch_array($run_blog))
   {
-    
-    $location=$row_blog['location'];
-    $var=$people[$location];
-    $timestamp1=$row_blog['starttime'];
+    $ID=$row_blog['ID'];
+    $timestamp1=$row_blog['recieved_on'];
     $timestamp3= new DateTime($timestamp1);
     $timestamp4=$timestamp3->format('d-m-Y | H:i');
-    $timestamp2=$row_blog['endtime'];
+    $remarks=$row_blog['remarks'];
+    $submitted_by=$row_blog['submitted_by'];
+    $timestamp2=$row_blog['submitted_on'];
     $timestamp5= new DateTime($timestamp2);
     $timestamp6=$timestamp5->format('d-m-Y | H:i');
+    $var1=15;
     
     
-     echo '<tr align="center">
+    echo '<tr align="center">
   <td>'.$i.'</td>
   
   
-  <td>'.$var.'</td>
+  <td>'.$ID.'</td>
   <td>'.$timestamp4.'</td>
-  
-  
-<td>'.$timestamp6.'</td>
+  <td>'.$remarks.'</td>
+  <td>'.$submitted_by.'</td>
+  <td>'.$timestamp6.'</td>
+  <td><a href="history.php?track_id='.$ID.'">History</a></td>
+<td> 
+<select name="flist" form="fwd'.$i.'">';
+for($j=1;$j<=11;$j++){
+	if($j!=$location and $j!=$user_id)
+	{
+		echo '<option align="center" value="'.$j.'">'.$people[$j].'</option>';
+	}
+}
 
+echo '<option align="center" value="'.$var1.'">Completed</option></select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" >
+	<input type="hidden" name="ID" value="'.$ID.'">
+	<input align="center" type="submit">
+</form></td>
   
   
 </tr>';
@@ -235,8 +268,9 @@ $i=$i+1;
 
 				</table>
 				</div>
-</br>
-</br>
+		
+
+
 
 <?php
 
