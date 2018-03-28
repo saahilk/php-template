@@ -33,7 +33,7 @@ else
 }
 
 
-$qry="update documnets SET remarks='$remarks' WHERE ID='$trackID'";
+$qry="update document SET remarks='$remarks' WHERE ID='$trackID'";
 
 $insert_blo= mysqli_query($conn, $qry);
 
