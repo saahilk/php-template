@@ -178,7 +178,7 @@ $user_id=$_SESSION['user_id'];
 				</li>
 				
 				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="otherfiles.php" ><b>Other Documents</b></a>
+					<a href="otherfiles.php" ><b>All Documents</b></a>
 				</li>
 
 				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
@@ -295,7 +295,7 @@ $i=$i+1;
 </br>
 </br>
 </br>
-<a style= "align-content: center" href="completelist.php">Link To All Completed Documents</a>
+
 			
 			
 			</center>

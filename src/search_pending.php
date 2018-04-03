@@ -270,7 +270,7 @@ if(isset($_GET['search']))
 				$text=$_GET['search'];
   
   				$user_id=$_SESSION['user_id'];
-  				$qry="SELECT * FROM document WHERE ( `ID` LIKE '%$text%' OR  `remarks` LIKE '%$text%' OR `submitted_by` LIKE '%$text%' ) AND (location='$user_id') order by recieved_on desc";
+  				$qry="SELECT * FROM document WHERE ( `ID` LIKE '%$text%' OR  `initial_remarks` LIKE '%$text%' OR `final_remarks` LIKE '%$text%' OR `submitted_by` LIKE '%$text%' ) AND (location='$user_id') order by recieved_on desc";
   				$run_blog=mysqli_query($conn,$qry);
   while($row_blog=mysqli_fetch_array($run_blog))
   {

@@ -177,7 +177,7 @@ $user_id=$_SESSION['user_id'];
 				</li>
 				
 				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="completelist.php" ><b>Completed Documents</b></a>
+					<a href="otherfiles.php" ><b>All Documents</b></a>
 				</li>
 
 				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
@@ -253,7 +253,7 @@ if(isset($_GET['search']))
 				$temp=12;
   				$text=$_GET['search'];
   				$user_id=$_SESSION['user_id'];
-  				$qry="SELECT * FROM document WHERE ( `ID` LIKE '%$text%' OR  `remarks` LIKE '%$text%' OR `submitted_by` LIKE '%$text%' ) AND ( location<>'$user_id' AND location<'$temp') order by recieved_on desc";
+  				$qry="SELECT * FROM document WHERE ( `ID` LIKE '%$text%' OR  `initial_remarks` LIKE '%$text%' OR `final_remarks` LIKE '%$text%' OR `submitted_by` LIKE '%$text%' ) AND ( location<>'$user_id' AND location<'$temp') order by recieved_on desc";
   				$run_blog=mysqli_query($conn,$qry);
   while($row_blog=mysqli_fetch_array($run_blog))
   {
@@ -302,7 +302,7 @@ $i=$i+1;
 </br>
 </br>
 </br>
-<a style= "align-content: center" href="otherfiles.php">Link To All Other Documents</a>
+
 			
 			</center>
 
