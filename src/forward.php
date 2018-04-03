@@ -42,11 +42,7 @@ $flag=$_POST['flist'];
 $track_no=$_POST['ID'];
 
 
-if($flag==15)
-{
-	$loc='complete.php?track_id='.$track_no;
-	header('Location:'.$loc);
-}
+
 
 $qry="SELECT * FROM document WHERE ID='$track_no' ";
 $run_blog=mysqli_query($conn,$qry);
