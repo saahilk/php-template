@@ -176,9 +176,7 @@ $user_id=$_SESSION['user_id'];
 					<a href="#" onclick="signOut()"><b>Logout</b></a>
 				</li>
 				
-				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="completelist.php" ><b>Completed Documents</b></a>
-				</li>
+				
 
 				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<a href="home.php" ><b>Pending Documents</b></a>
@@ -223,14 +221,19 @@ echo $people[$_SESSION['user_id']]
 
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
 					<tr align="center" >
- 				 <th style="text-align: center;line-height: 25px;">S.No</th>
+ 				 <th style="text-align: center;line-height: 25px;">S.no</th>
 				  <th style="text-align: center;line-height: 25px;">Tracking ID</th>
 				  <th style="text-align: center;line-height: 25px;">Currently At</th>
-				  <th style="text-align: center;line-height: 25px;">Received ON</th>
-				  <th style="text-align: center;line-height: 25px;">Remarks</th>
-				  <th style="text-align: center;line-height: 25px;">Submitted By</th>
-				  <th style="text-align: center;line-height: 25px;">Submitted On</th>
+				  <th style="text-align: center;line-height: 25px;">Submitted by</th>
+				   <th style="text-align: center;line-height: 25px;">First Submitted on</th>
+				   <th style="text-align: center;line-height: 25px;">Initial Remarks</th>
+				  <th style="text-align: center;line-height: 25px;">Recieved here on</th>
+				   <th style="text-align: center;line-height: 25px;">Current Remarks</th>
+				 
 				  <th style="text-align: center;line-height: 25px;">History</th>
+				  
+			
+  				  
   
   
 					</tr>
@@ -259,7 +262,8 @@ echo $people[$_SESSION['user_id']]
     $timestamp1=$row_blog['recieved_on'];
     $timestamp3= new DateTime($timestamp1);
     $timestamp4=$timestamp3->format('d-m-Y | H:i');
-    $remarks=$row_blog['remarks'];
+    $remarks1=$row_blog['initial_remarks'];
+    $remarks2=$row_blog['final_remarks'];
     $submitted_by=$row_blog['submitted_by'];
     $timestamp2=$row_blog['submitted_on'];
     $timestamp5= new DateTime($timestamp2);
@@ -271,10 +275,97 @@ echo $people[$_SESSION['user_id']]
   
   <td>'.$ID.'</td>
   <td>'.$location.'</td>
-  <td>'.$timestamp4.'</td>
-  <td>'.$remarks.'</td>
   <td>'.$submitted_by.'</td>
-<td>'.$timestamp6.'</td>
+  <td>'.$timestamp4.'</td>
+  <td>'.$remarks1.'</td>
+  <td>'.$timestamp6.'</td>
+  <td>'.$remarks2.'</td>
+
+<td><a href="history.php?track_id='.$ID.'">History</a></td>';
+
+
+
+
+$i=$i+1;
+
+  }
+
+  ?>
+
+
+				</table>
+				</div>
+        </br>
+        </br>
+        </br>
+
+        <div>
+					</br>
+					<h2 align="center">Completed Documents</h2>
+					</br>
+				</br>
+
+					<form align="right" class="example" action="search_complete.php" style="margin:auto;max-width:300px">
+  						<input type="text" placeholder="Search.." name="search">
+  						<button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+
+				</br>
+				</br>
+				</br>
+
+					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
+
+					<tr align="center" >
+ 				  <th style="text-align: center;line-height: 25px;">S.no</th>
+				  <th style="text-align: center;line-height: 25px;">Tracking ID</th>
+				  <th style="text-align: center;line-height: 25px;">Submitted by</th>
+				   <th style="text-align: center;line-height: 25px;">First Submitted on</th>
+				   <th style="text-align: center;line-height: 25px;">Initial Remarks</th>
+				
+				   
+				 
+				  <th style="text-align: center;line-height: 25px;">History</th>
+				  
+				  
+  
+  
+					</tr>
+
+<?php
+
+
+
+
+ 
+
+				$i=1;
+				$temp=15;
+  
+  				$user_id=$_SESSION['user_id'];
+  				$qry="SELECT * FROM document WHERE  location='$temp' order by recieved_on desc";
+  				$run_blog=mysqli_query($conn,$qry);
+  while($row_blog=mysqli_fetch_array($run_blog))
+  {
+    $ID=$row_blog['ID'];
+    $var=$row_blog['location'];
+    $location=$people[$var];
+    $timestamp3=$row_blog['recieved_on'];
+    $remarks=$row_blog['initial_remarks'];
+    $submitted_by=$row_blog['submitted_by'];
+    $timestamp2=$row_blog['submitted_on'];
+    $timestamp3= new DateTime($timestamp2);
+    $timestamp4=$timestamp3->format('d-m-Y | H:i');
+    
+     echo '<tr align="center">
+  <td>'.$i.'</td>
+  
+  
+  <td>'.$ID.'</td>
+  
+  <td>'.$submitted_by.'</td>
+<td>'.$timestamp4.'</td>
+<td>'.$remarks.'</td>
 <td><a href="history.php?track_id='.$ID.'">History</a></td>';
 
 
