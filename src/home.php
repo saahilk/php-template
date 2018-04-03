@@ -407,14 +407,18 @@ $i=$i+1;
 					<tr align="center" >
  				 <th style="text-align: center;line-height: 25px;">S.no</th>
 				  <th style="text-align: center;line-height: 25px;">Tracking ID</th>
-				  <th style="text-align: center;line-height: 25px;">Received ON</th>
-				  <th style="text-align: center;line-height: 25px;">Remarks</th>
-				  <th style="text-align: center;line-height: 25px;">Submitted By</th>
-				  <th style="text-align: center;line-height: 25px;">Submitted On</th>
-				  <th style="text-align: center;line-height: 25px;">History</th>
+				  <th style="text-align: center;line-height: 25px;">Submitted by</th>
+				   <th style="text-align: center;line-height: 25px;">First Submitted on</th>
+				   <th style="text-align: center;line-height: 25px;">Initial Remarks</th>
+				  <th style="text-align: center;line-height: 25px;">Recieved here on</th>
+				   <th style="text-align: center;line-height: 25px;">Current Remarks</th>
 				  <th style="text-align: center;line-height: 25px;">Edit Remarks</th>
-				  <th style="text-align: center;line-height: 25px;">Forward</th>
+				 
+				  <th style="text-align: center;line-height: 25px;">History</th>
+				  
+				  <th style="text-align: center;line-height: 25px;">Forward To</th>
 				  <th style="text-align: center;line-height: 25px;">Submit</th>
+  				  
   
   
 					</tr>
@@ -439,7 +443,8 @@ $i=$i+1;
     $timestamp1=$row_blog['recieved_on'];
     $timestamp3= new DateTime($timestamp1);
     $timestamp4=$timestamp3->format('d-m-Y | H:i');
-    $remarks=$row_blog['remarks'];
+    $remarks1=$row_blog['initial_remarks'];
+    $remarks2=$row_blog['final_remarks'];
     $submitted_by=$row_blog['submitted_by'];
     $timestamp2=$row_blog['submitted_on'];
     $timestamp5= new DateTime($timestamp2);
@@ -449,13 +454,18 @@ $i=$i+1;
   <td>'.$i.'</td>
   
   
-  <td>'.$ID.'</td>
-  <td>'.$timestamp4.'</td>
-  <td>'.$remarks.'</td>
+
+<td>'.$ID.'</td>
   <td>'.$submitted_by.'</td>
-<td>'.$timestamp6.'</td>
-<td><a href="history.php?track_id='.$ID.'">History</a></td>
-<td><a href="edit.php?track_id='.$ID.'">Edit</a></td>
+  <td>'.$timestamp4.'</td>
+  <td>'.$remarks1.'</td>
+  
+  <td>'.$timestamp6.'</td>
+  <td>'.$remarks2.'</td>
+  <td><a href="edit.php?track_id='.$ID.'">Edit</a></td>
+  <td><a href="history.php?track_id='.$ID.'">History</a></td>
+
+
 <td> 
 <select name="flist" form="fwd'.$i.'">';
 for($j=1;$j<=11;$j++){
