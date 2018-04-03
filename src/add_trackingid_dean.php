@@ -204,7 +204,7 @@ echo $people[$_SESSION['user_id']]
     
     
     <tr>
-    	 <td align="right">Remarks: </td>
+    	 <td align="right">Initial Remarks: </td>
     	<td><input type="text" name="remarks" pattern="[A-Za-z ]+" required></td>
     </tr>
     

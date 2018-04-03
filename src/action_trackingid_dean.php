@@ -33,7 +33,7 @@ else
 }
 
 
-$qry="insert into document(ID,location,submitted_on,submitted_by,remarks,recieved_on) values ('$ID','$to','$timestamp','$from','$remarks','$timestamp')";
+$qry="insert into document(ID,location,submitted_on,submitted_by,initial_remarks,final_remarks,recieved_on) values ('$ID','$to','$timestamp','$from','$remarks','$remarks','$timestamp')";
 
 $insert_blo= mysqli_query($conn, $qry);
 
