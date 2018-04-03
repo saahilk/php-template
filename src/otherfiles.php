@@ -208,7 +208,7 @@ echo $people[$_SESSION['user_id']]
 
 					<h2 align="center">All Documents</h2>
 				</br>
-				</br>
+			
 
 				<form align="right" class="example" action="search_otherfiles.php" style="margin:auto;max-width:300px">
   						<input type="text" placeholder="Search.." name="search">
@@ -216,8 +216,7 @@ echo $people[$_SESSION['user_id']]
 					</form>
 
 				</br>
-				</br>
-				</br>
+				
 
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
 					<tr align="center" >
@@ -296,14 +295,13 @@ $i=$i+1;
 				</table>
 				</div>
         </br>
-        </br>
-        </br>
+        
 
         <div>
 					</br>
 					<h2 align="center">Completed Documents</h2>
 					</br>
-				</br>
+				
 
 					<form align="right" class="example" action="search_complete.php" style="margin:auto;max-width:300px">
   						<input type="text" placeholder="Search.." name="search">
@@ -311,8 +309,7 @@ $i=$i+1;
 					</form>
 
 				</br>
-				</br>
-				</br>
+			
 
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
 

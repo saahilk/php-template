@@ -146,12 +146,8 @@ $user_id=$_SESSION['user_id'];
 					
 					
 
-					<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="completelist.php" ><b>Completed </b></a>
-				</li>
-
 				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="otherfiles.php" ><b>Other </b></a>
+					<a href="otherfiles.php" ><b>All Documents </b></a>
 				</li>
 
 				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
