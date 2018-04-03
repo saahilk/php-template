@@ -185,12 +185,9 @@ $user_id=$_SESSION['user_id'];
 					
 					
 
-					<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="completelist.php" ><b>Completed Documents</b></a>
-				</li>
-
+					
 				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="otherfiles.php" ><b>Other Documents</b></a>
+					<a href="otherfiles.php" ><b>All Documents</b></a>
 				</li>
 
 				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
@@ -205,7 +202,9 @@ $user_id=$_SESSION['user_id'];
 
 				?>
 				
-
+				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
+					<a href="home.php"><b>Pending Documents</b></a>
+				</li>
 		    
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<b>
@@ -245,16 +244,19 @@ if(isset($_GET['search']))
 					<table  style="background-color:#DDDDDD;     margin-left: 200px;" align="center" width="1000"  border="5" >
 
 					<tr align="center" >
- 				  <th style="text-align: center;line-height: 25px;">S.no</th>
+ 				 <th style="text-align: center;line-height: 25px;">S.no</th>
 				  <th style="text-align: center;line-height: 25px;">Tracking ID</th>
-				  <th style="text-align: center;line-height: 25px;">Recieved on</th>
-				  <th style="text-align: center;line-height: 25px;">Remarks</th>
 				  <th style="text-align: center;line-height: 25px;">Submitted by</th>
-				  <th style="text-align: center;line-height: 25px;">Submitted on</th>
+				   <th style="text-align: center;line-height: 25px;">First Submitted on</th>
+				   <th style="text-align: center;line-height: 25px;">Initial Remarks</th>
+				  <th style="text-align: center;line-height: 25px;">Recieved here on</th>
+				   <th style="text-align: center;line-height: 25px;">Current Remarks</th>
+				  <th style="text-align: center;line-height: 25px;">Edit Remarks</th>
+				 
 				  <th style="text-align: center;line-height: 25px;">History</th>
-				  <th style="text-align: center;line-height: 25px;">Forward</th>
+				  
+				  <th style="text-align: center;line-height: 25px;">Forward To</th>
 				  <th style="text-align: center;line-height: 25px;">Submit</th>
-  				  
   
 					</tr>
 
@@ -278,7 +280,7 @@ if(isset($_GET['search']))
     $timestamp1=$row_blog['recieved_on'];
     $timestamp3= new DateTime($timestamp1);
     $timestamp4=$timestamp3->format('d-m-Y | H:i');
-    $remarks=$row_blog['remarks'];
+    $remarks=$row_blog['initial_remarks'];
     $submitted_by=$row_blog['submitted_by'];
     $timestamp2=$row_blog['submitted_on'];
     $timestamp5= new DateTime($timestamp2);
@@ -335,7 +337,7 @@ $i=$i+1;
 </br>
 </br>
 </br>
-<a style= "align-content: center" href="home.php">Link To Home Page</a>
+
 
 			</center>
 
