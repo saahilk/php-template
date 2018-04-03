@@ -235,7 +235,7 @@ echo $people[$_SESSION['user_id']]
 
 <tr>
       <td align="right">Tracking Id:</td>
-      <td><input type="text" name="tracking_id" maxlength="30" minlength="5"  pattern="[^\s]+" placeholder="tracking id" required></td>
+      <td><input type="text" name="tracking_id" maxlength="30" minlength="5"   placeholder="tracking id" required></td>
     </tr>
     <tr>
     	 <td align="right">Submit to: </td>
