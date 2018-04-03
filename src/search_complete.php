@@ -258,7 +258,7 @@ if(isset($_GET['search']))
     $var=$row_blog['location'];
     $location=$people[$var];
     $timestamp3=$row_blog['recieved_on'];
-    $remarks=$row_blog['remarks'];
+    $remarks=$row_blog['initial_remarks'];
     $submitted_by=$row_blog['submitted_by'];
     $timestamp2=$row_blog['submitted_on'];
     $timestamp3= new DateTime($timestamp2);

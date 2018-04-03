@@ -263,7 +263,7 @@ if(isset($_GET['search']))
     $timestamp1=$row_blog['recieved_on'];
     $timestamp3= new DateTime($timestamp1);
     $timestamp4=$timestamp3->format('d-m-Y | H:i');
-    $remarks=$row_blog['remarks'];
+    $remarks=$row_blog['initial_remarks'];
     $submitted_by=$row_blog['submitted_by'];
     $timestamp2=$row_blog['submitted_on'];
     $timestamp5= new DateTime($timestamp2);
