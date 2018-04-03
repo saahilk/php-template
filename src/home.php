@@ -362,6 +362,7 @@ echo '<option align="center" value="'.$var1.'">Completed</option></select></td><
 	<input align="center" type="submit">
 </form></td>
   
+
   
 </tr>';
 
@@ -449,6 +450,7 @@ $i=$i+1;
     $timestamp2=$row_blog['submitted_on'];
     $timestamp5= new DateTime($timestamp2);
     $timestamp6=$timestamp5->format('d-m-Y | H:i');
+    $var1=15;
 
  echo '<tr align="center">
   <td>'.$i.'</td>
@@ -475,10 +477,11 @@ for($j=1;$j<=11;$j++){
 	}
 }
 
-echo '</select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" >
+echo '<option align="center" value="'.$var1.'">Completed</option></select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" >
 	<input type="hidden" name="ID" value="'.$ID.'">
 	<input align="center" type="submit">
 </form></td>
+  
   
   
 </tr>';
