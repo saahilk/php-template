@@ -224,7 +224,7 @@ echo $people[$_SESSION['user_id']]
 				if($_SESSION['user_id']=='0'){
 					?>
 				</br>
-					<form action="add_trackingid.php" method="post" enctype="multipart/form-data">
+					<form action="add_trackingid.php" method="post" onsubmit="return confirm('Are you sure ?');" enctype="multipart/form-data">
   <table align="center" width="600" height="400" border="1" bgcolor="skyblue" style="background-color: #DDDDDD">
     <tr align="center">
       <td colspan="5"><h1 style="text-align:center">ADD A NEW TRACKING NUMBER</h1></td>
