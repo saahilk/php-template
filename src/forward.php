@@ -61,7 +61,8 @@ $insert_blo= mysqli_query($conn, $qry);
 
 
 
-$qry1='UPDATE document SET location="'.$flag.'",recieved_on="'.$timestamp.'" WHERE ID="'.$track_no.'"';
+$qry1="UPDATE document SET location='$flag',recieved_on='$timestamp' WHERE ID='$track_no' ";
+
 if($insert_blo&&$conn->query($qry1)==TRUE)
 {
     header('Location:home.php');
