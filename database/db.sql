@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 28, 2018 at 12:21 AM
+-- Generation Time: Apr 03, 2018 at 06:44 AM
 -- Server version: 5.7.21-0ubuntu0.16.04.1
 -- PHP Version: 7.0.28-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -31,8 +31,9 @@ CREATE TABLE `document` (
   `location` int(2) DEFAULT NULL,
   `submitted_on` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `submitted_by` varchar(90) DEFAULT NULL,
-  `remarks` varchar(2000) DEFAULT NULL,
-  `recieved_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `recieved_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `initial_remarks` varchar(2000) DEFAULT NULL,
+  `final_remarks` varchar(2000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
