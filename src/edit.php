@@ -195,7 +195,7 @@ $user_id=$_SESSION['user_id'];
     <tr>
 
     	 <td align="right">Remarks: </td>
-    	<?php echo '<td><input style="display:none" type="text" name="track_id" value="'.$trackID.'">' ?><input type="text" name="remarks" pattern="[A-Za-z ]+" required></td>
+    	<?php echo '<td><input style="display:none" type="text" name="track_id" value="'.$trackID.'">' ?><input type="text" name="remarks" required></td>
     </tr>
     
     <tr align="center" style="font-size:1.5em;">
