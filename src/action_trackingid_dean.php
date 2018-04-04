@@ -23,15 +23,15 @@ $db = substr($url["path"], 1);
 $conn = new mysqli($servername, $username, $password, $db);
 
 
-if($user_id=='1')
-{
-	$from="Dean" ;
-}
-else
-{
-	$from="DR" ;
-}
-
+// if($user_id=='1')
+// {
+// 	$from="Dean" ;
+// }
+// else
+// {
+// 	$from="DR" ;
+// }
+$from=$_POST['sub_by'];
 
 $qry="insert into document(ID,location,submitted_on,submitted_by,initial_remarks,final_remarks,recieved_on) values ('$ID','$to','$timestamp','$from','$remarks','$remarks','$timestamp')";
 
