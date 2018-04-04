@@ -181,6 +181,10 @@ echo $people[$_SESSION['user_id']]
       <td align="right">Tracking Id:</td>
       <td><input type="text" name="tracking_id" maxlength="30" minlength="5"  placeholder="tracking id" required></td>
     </tr>
+	  <tr>
+      <td align="right">Submitted by:</td>
+      <td><input type="text" name="sub_by" required></td>
+    </tr>
     <tr>
     	 <td align="right">Submit to: </td>
     	<td><select name="addressee" required>
