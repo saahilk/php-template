@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 03, 2018 at 06:44 AM
+-- Generation Time: Apr 04, 2018 at 06:04 PM
 -- Server version: 5.7.21-0ubuntu0.16.04.1
 -- PHP Version: 7.0.28-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -43,7 +43,7 @@ CREATE TABLE `document` (
 --
 
 CREATE TABLE `history` (
-  `ID` varchar(20) NOT NULL,
+  `ID` varchar(35) NOT NULL,
   `location` int(2) NOT NULL,
   `starttime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `endtime` timestamp NULL DEFAULT NULL
