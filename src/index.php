@@ -102,9 +102,12 @@ if(isset($_SESSION["user_id"]) && $_SESSION["user_id"]!= ""){
 
 		</style>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-	<script src="https://apis.google.com/js/platform.js" async defer></script>
+ <meta name="google-signin-client_id" content="198245615700-pgvukhlk6acg5e6767spu3b35fkcld31.apps.googleusercontent.com"> 
+<meta name ="google-signin-hosted_domain" content="nitc.ac.in"/> 
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<script>
 
