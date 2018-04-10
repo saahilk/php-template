@@ -101,7 +101,7 @@ if(isset($_SESSION["user_id"]) && $_SESSION["user_id"]!= ""){
 		</style>
 
 
- <meta name="google-signin-client_id" content="198245615700-pgvukhlk6acg5e6767spu3b35fkcld31.apps.googleusercontent.com"> 
+ <meta name="google-signin-client_id" content="952937888060-b470t00um3s9uclet4qaua91ocvrjfus.apps.googleusercontent.com"> 
 <meta name ="google-signin-hosted_domain" content="nitc.ac.in"/> 
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script src="script.js"></script>
