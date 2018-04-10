@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 04, 2018 at 06:04 PM
+-- Generation Time: Apr 10, 2018 at 03:02 PM
 -- Server version: 5.7.21-0ubuntu0.16.04.1
 -- PHP Version: 7.0.28-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -65,18 +65,15 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`emailid`, `flag`) VALUES
-('aditi_b150063cs@nitc.ac.in', 7),
-('ameersuhail_b150592cs@nitc.ac.in', 5),
-('devan_b150072cs@nitc.ac.in', 8),
-('evareshma_b150129cs@nitc.ac.in', 4),
-('geo_b150005cs@nitc.ac.in', 0),
-('haziq_b150350cs@nitc.ac.in', 6),
-('kiran_b150020cs@nitc.ac.in', 9),
-('maheshkumar_b150588cs@nitc.ac.in', 2),
-('reuben_b150042cs@nitc.ac.in', 10),
-('rohit_b150264cs@nitc.ac.in', 11),
-('saahilsuhas_b150470cs@nitc.ac.in', 3),
-('saiswaroop_b150376cs@nitc.ac.in', 1);
+('ga1@nitc.ac.in', 3),
+('ga2@nitc.ac.in', 4),
+('ga3@nitc.ac.in', 5),
+('ga4@nitc.ac.in', 6),
+('ga5@nitc.ac.in', 7),
+('ga6@nitc.ac.in', 8),
+('ga7@nitc.ac.in', 9),
+('ga8@nitc.ac.in', 1),
+('ga9@nitc.ac.in', 2);
 
 --
 -- Indexes for dumped tables
