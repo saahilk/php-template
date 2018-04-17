@@ -137,7 +137,7 @@ $user_id=$_SESSION['user_id'];
 					</div>	
 				</li>
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
-					<a href="#" onclick="signOut()"><b>Logout</b></a>
+					<a href="https://accounts.google.com/Logout?&continue=https://appengine.google.com/_ah/logout?continue=http://acadtracker.nitc.ac.in:8081" ><b>Logout</b></a>
 				</li>
 				<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<a href="home.php" ><b>Home</b></a>
