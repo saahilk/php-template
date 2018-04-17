@@ -319,7 +319,7 @@ $i=$i+1;
 				  <th style="text-align: center;line-height: 25px;">Submitted by</th>
 				   <th style="text-align: center;line-height: 25px;">First Submitted on</th>
 				   <th style="text-align: center;line-height: 25px;">Initial Remarks</th>
-				
+					<th style="text-align: center;line-height: 25px;">Current Remarks</th>
 				   
 				 
 				  <th style="text-align: center;line-height: 25px;">History</th>
@@ -349,6 +349,7 @@ $i=$i+1;
     $location=$people[$var];
     $timestamp3=$row_blog['recieved_on'];
     $remarks=$row_blog['initial_remarks'];
+    $remarks2=$row_blog['final_remarks'];
     $submitted_by=$row_blog['submitted_by'];
     $timestamp2=$row_blog['submitted_on'];
     $timestamp3= new DateTime($timestamp2);
@@ -363,6 +364,7 @@ $i=$i+1;
   <td>'.$submitted_by.'</td>
 <td>'.$timestamp4.'</td>
 <td>'.$remarks.'</td>
+<td>'.$remarks2.'</td>
 <td><a href="history.php?track_id='.$ID.'">History</a></td>';
 
 
