@@ -359,7 +359,7 @@ for($j=1;$j<=11;$j++){
 
 echo '<option align="center" value="'.$var1.'">Completed</option></select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" >
 	<input type="hidden" name="ID" value="'.$ID.'">
-	<button onclick="document.getElementById("id01").style.display="block" " class="w3-button w3-black">Submit</button>
+	<button>Submit</button>
 	
 </form></td>
   
@@ -376,17 +376,6 @@ $i=$i+1;
 
 				</table>
 
-<div id="id01" class="w3-modal">
-    <div class="w3-modal-content">
-      <div class="w3-container">
-        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <p>Confirm Submission</p>
-        <form action="forward.php">
-        	<input  align="center" type="submit" >
-        </form>
-      </div>
-    </div>
-  </div>
 
 
 
