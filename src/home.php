@@ -358,23 +358,10 @@ for($j=1;$j<=11;$j++){
 }
 
 
-	<button onclick="document.getElementById('id01').style.display='block'"> class="w3-button w3-black">Submit</button>
-	<div id="id01" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id01').style.display='none'" 
-        class="w3-button w3-display-topright">&times;</span>
-        <h2>Modal Header</h2>
-      </header>
-      <div class="w3-container">
-        <p>Some text..</p>
-        <p>Some text..</p>
-      </div>
-      <footer class="w3-container w3-teal">
-        <p>Modal Footer</p>
-      </footer>
-    </div>
-  </div>
+	echo '<option align="center" value="'.$var1.'">Completed</option></select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" >
+	<input type="hidden" name="ID" value="'.$ID.'">
+	<button>Submit</button>
+    
 </form></td>
   
 
