@@ -360,7 +360,7 @@ for($j=1;$j<=11;$j++){
 
 	echo '<option align="center" value="'.$var1.'">Completed</option></select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" >
 	<input type="hidden" name="ID" value="'.$ID.'">
-	<button>Submit</button>
+	<input type="button" name="btn" value="Submit" id="submitBtn'.$i.'" data-toggle="modal" data-target="#confirm-submit" class="btn btn-default" />
     
 </form></td>
   
