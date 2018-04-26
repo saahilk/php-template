@@ -378,12 +378,12 @@ $i=$i+1;
 
 				</table>
 
-				<div id="myModal" class="modal">
+		<div id="myModal" class="modal">
 
 		  <!-- Modal content -->
 		  <div class="modal-content">
 		    <span class="close">&times;</span>
-		    <form action="forward.php">
+		    <form action="forward.php" method="post">
 		    	<input id="form-final-loc" type="hidden" name='flist'>
 		    	<input id="form-final-ID" type="hidden" name="ID">
 		    	<table>
@@ -539,6 +539,7 @@ $i=$i+1;
 			<script >
 				var modal = document.getElementById('myModal');
 			    var span = document.getElementsByClassName("close")[0]; 
+			    modal.style.display="none";
 				function makemodal(caller) {
 			    	 console.log('hello');   
 			    	 // var par=caller.parentElement.parentElement.parentElement.children[9].children[0];
