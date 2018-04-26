@@ -57,7 +57,7 @@ $user_id=$_SESSION['user_id'];
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
-
+		<script src="jquery-3.3.1.min.js"></script>
 		<script>
     
 			function signOut() {
@@ -536,7 +536,7 @@ $i=$i+1;
 
 
 
-			<script >
+			<script>
 				var modal = document.getElementById('myModal');
 			    var span = document.getElementsByClassName("close")[0]; 
 			    modal.style.display="none";
