@@ -334,7 +334,7 @@ echo $people[$_SESSION['user_id']]
     $var1=15;
     
     
-    echo '<tr align="center">
+     echo '<tr align="center">
   <td>'.$i.'</td>
   
   
@@ -344,12 +344,12 @@ echo $people[$_SESSION['user_id']]
   <td>'.$remarks1.'</td>
   
   <td>'.$timestamp6.'</td>
-  <td>'.$remarks2.'</td>
+  <td id="cur-rem'.$i.'">'.$remarks2.'</td>
   <td><a href="edit.php?track_id='.$ID.'">Edit</a></td>
   <td><a href="history.php?track_id='.$ID.'">History</a></td>
   
 <td> 
-<select name="flist" form="fwd'.$i.'">';
+<select id="sel'.$i.'" name="flist" form="fwd'.$i.'">';
 for($j=1;$j<=11;$j++){
 	if($j!=$location and $j!=$user_id)
 	{
@@ -359,15 +359,15 @@ for($j=1;$j<=11;$j++){
 
 
 	echo '<option align="center" value="'.$var1.'">Completed</option></select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" >
-	<input type="hidden" name="ID" value="'.$ID.'">
-	<button>Submit</button>'
-	// <input type="button" name="btn" value="Submit" id="submitBtn'.$i.'" data-toggle="modal" data-target="#confirm-submit" class="btn btn-default" />
-    
+	<input type="hidden" id="hin'.$i.'" name="ID" value="'.$ID.'">
+	<input class="modal-but" onClick="makemodal(this);" type="button" id="sub-'.$i.'" value="Submit">
+ 
 </form></td>
   
 
   
 </tr>';
+
 
 $i=$i+1;
 
@@ -378,7 +378,30 @@ $i=$i+1;
 
 				</table>
 
+				<div id="myModal" class="modal">
 
+		  <!-- Modal content -->
+		  <div class="modal-content">
+		    <span class="close">&times;</span>
+		    <form action="forward.php">
+		    	<input id="form-final-loc" type="hidden" name='flist'>
+		    	<input id="form-final-ID" type="hidden" name="ID">
+		    	<table>
+		    		<tr>
+		    			<td>Current Remarks :</td>
+		    			<td id="form-final-remarks"></td>
+		    		</tr>
+		    		<br>
+		    		<tr>
+		    			<td>Enter Remarks :</td>
+		    			<td><input type="text" name="remarks"></td>
+		    		</tr>
+		    	</table>
+		    	<input type="submit" value="Submit"> 
+		    </form>
+		  </div>
+
+		</div>
 
 
 
@@ -511,6 +534,37 @@ $i=$i+1;
 			</center>
 
 
+
+
+			<script >
+				var modal = document.getElementById('myModal');
+			    var span = document.getElementsByClassName("close")[0]; 
+				function makemodal(caller) {
+			    	 console.log('hello');   
+			    	 // var par=caller.parentElement.parentElement.parentElement.children[9].children[0];
+			    	 var par=$(caller).attr('id');
+			    	 var formSno=par.substr(4,);
+			    	 sel=document.getElementById('sel'+formSno);
+			    	 var loc=sel.options[sel.selectedIndex].value;
+			    	 var docID=document.getElementById('hin'+formSno).value;
+			    	 var rem=document.getElementById('cur-rem'+formSno).innerHTML;
+			    	 document.getElementById('form-final-remarks').innerHTML=rem;
+			    	 document.getElementById('form-final-ID').value=docID;
+			    	 document.getElementById('form-final-loc').value=loc;
+			    	 console.log(formSno,loc,docID,rem);	
+			    	 modal.style.display="block";
+				}	
+
+				span.onclick = function() {
+				    modal.style.display = "none";
+				}
+
+				window.onclick = function(event) {
+				    if (event.target == modal) {
+				        modal.style.display = "none";
+				    }
+				} 
+			</script>
 
 	</body>
 </html>
