@@ -395,7 +395,7 @@ $i=$i+1;
 		    		<br>
 		    		<tr>
 		    			<td>Enter Remarks :</td>
-		    			<td><input type="text" name="remarks"></td>
+		    			<td><input type="text" name="remarks" value=""></td>
 		    		</tr>
 		    	</table>
 		    	<br>
@@ -541,7 +541,7 @@ $i=$i+1;
 			<script>
 				var modal = document.getElementById('myModal');
 			    var span = document.getElementsByClassName("close")[0]; 
-			    modal.style.display="none";
+			   
 				function makemodal(caller) {
 			    	 console.log('hello');   
 			    	 // var par=caller.parentElement.parentElement.parentElement.children[9].children[0];
