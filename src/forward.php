@@ -40,7 +40,7 @@ if($_SESSION['user_id']=="") {
 
 $flag=$_POST['flist'];
 $track_no=$_POST['ID'];
-$rem=$_POST['remarks'];
+$remarks=$_POST['remarks'];
 
 
 
