@@ -56,6 +56,7 @@ $user_id=$_SESSION['user_id'];
 		<meta name="google-signin-client_id" content="952937888060-b470t00um3s9uclet4qaua91ocvrjfus.apps.googleusercontent.com">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="modal.css">
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
 		<script src="jquery-3.3.1.min.js"></script>
 		<script>
@@ -397,6 +398,7 @@ $i=$i+1;
 		    			<td><input type="text" name="remarks"></td>
 		    		</tr>
 		    	</table>
+		    	<br>
 		    	<input type="submit" value="Submit"> 
 		    </form>
 		  </div>
