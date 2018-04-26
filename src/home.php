@@ -218,7 +218,31 @@ echo $people[$_SESSION['user_id']]
 		</div>
 	<center>
 
+		<div id="myModal" class="modal">
 
+		  <!-- Modal content -->
+		  <div class="modal-content">
+		    <span class="close">&times;</span>
+		    <form action="forward.php" method="post">
+		    	<input id="form-final-loc" type="hidden" name='flist'>
+		    	<input id="form-final-ID" type="hidden" name="ID">
+		    	<table>
+		    		<tr>
+		    			<td>Current Remarks :</td>
+		    			<td id="form-final-remarks"></td>
+		    		</tr>
+		    		<br>
+		    		<tr>
+		    			<td>Enter Remarks :</td>
+		    			<td><input type="text" name="remarks" value=""></td>
+		    		</tr>
+		    	</table>
+		    	<br>
+		    	<input type="submit" value="Submit"> 
+		    </form>
+		  </div>
+
+		</div>
 
 
 		<?php
@@ -379,31 +403,7 @@ $i=$i+1;
 
 				</table>
 
-		<div id="myModal" class="modal">
-
-		  <!-- Modal content -->
-		  <div class="modal-content">
-		    <span class="close">&times;</span>
-		    <form action="forward.php" method="post">
-		    	<input id="form-final-loc" type="hidden" name='flist'>
-		    	<input id="form-final-ID" type="hidden" name="ID">
-		    	<table>
-		    		<tr>
-		    			<td>Current Remarks :</td>
-		    			<td id="form-final-remarks"></td>
-		    		</tr>
-		    		<br>
-		    		<tr>
-		    			<td>Enter Remarks :</td>
-		    			<td><input type="text" name="remarks" value=""></td>
-		    		</tr>
-		    	</table>
-		    	<br>
-		    	<input type="submit" value="Submit"> 
-		    </form>
-		  </div>
-
-		</div>
+		
 
 
 
