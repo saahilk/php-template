@@ -496,13 +496,13 @@ $i=$i+1;
   <td>'.$remarks1.'</td>
   
   <td>'.$timestamp6.'</td>
-  <td>'.$remarks2.'</td>
+  <td id="cur-rem'.$i.'">'.$remarks2.'</td>
   <td><a href="edit.php?track_id='.$ID.'">Edit</a></td>
   <td><a href="history.php?track_id='.$ID.'">History</a></td>
 
 
 <td> 
-<select name="flist" form="fwd'.$i.'">';
+<select id="sel'.$i.'" name="flist" form="fwd'.$i.'">';
 for($j=1;$j<=11;$j++){
 	if($j!=$user_id)
 	{
@@ -511,8 +511,8 @@ for($j=1;$j<=11;$j++){
 }
 
 echo '<option align="center" value="'.$var1.'">Completed</option></select></td><td><form action="forward.php" id="fwd'.$i.'" method="post" >
-	<input type="hidden" name="ID" value="'.$ID.'">
-	<input align="center" type="submit">
+	<input type="hidden" id="hin'.$i.'" name="ID" value="'.$ID.'">
+	<input class="modal-but" onClick="makemodal(this);" type="button" id="sub-'.$i.'" value="Submit">
 </form></td>
   
   
