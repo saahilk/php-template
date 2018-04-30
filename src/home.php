@@ -16,13 +16,13 @@ if ($conn->connect_error) {
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   	$email_val = $_POST['user_email'];
   	
-	$qry="SELECT * FROM user WHERE emailid='" . $email_val."'";
-  
-	$result = mysqli_query($conn,$qry);
-  	$row  = mysqli_fetch_array($result);
+	$qry="SELECT * FROM user WHERE emailid='$email_val'";
+  	
 
-  	if(is_array($row)) {
-    	$_SESSION['user_id'] = $row['flag'];
+	$run_blog = mysqli_query($conn,$qry);
+
+  	if($row_blog=mysqli_fetch_array($run_blog)) {
+    	$_SESSION['user_id'] = $row_blog['flag'];
    	 	$_SESSION['username']=$_POST['user_name'];
   	}
 }
