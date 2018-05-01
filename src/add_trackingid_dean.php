@@ -46,6 +46,21 @@ $people=[
 	11=>"GA9",
 ];
 
+$people1=[
+	0=>"Staff",
+	1=>"Dean GA8",
+	2=>"DR GA9",
+	3=>"GA1",
+	4=>"GA2",
+	5=>"GA3",
+	6=>"GA4",
+	7=>"GA5",
+	8=>"GA6",
+	9=>"GA7",
+	10=>"GA8",
+	11=>"GA9",
+];
+
 $user_id=$_SESSION['user_id'];
 
 ?>
@@ -159,7 +174,7 @@ $user_id=$_SESSION['user_id'];
 		      		<li style="font-family: arial, sans-serif;float:right;margin-right:5px;">
 					<b>
 <?php 
-echo $people[$_SESSION['user_id']]
+echo $people1[$_SESSION['user_id']]
 
 ?>
 

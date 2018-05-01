@@ -26,6 +26,8 @@ $people=[
 ];
 
 
+
+
 $timestamp=date('Y-m-d H:i:s');
 
 $conn = new mysqli($servername, $username, $password, $db);
